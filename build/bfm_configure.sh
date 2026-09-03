@@ -248,7 +248,7 @@ for option in "${OPTIONS_USR[@]}"; do
     [ ${VERBOSE} ] && eval [ \"\${$option}\" ]  && eval echo "- replacing ${opt_name}="\"\${$option}\"
 done
 
-if [ "$MODE" == "NEMO_CESM" ]; then
+if [ "$MODE" == "CMCC_ESM" ]; then
     PROC=0
     BFMDIR="${BFMDIR_DEFAULT}"
     echo "setting BFM path to : ${BFMDIR}"
@@ -266,7 +266,7 @@ if [[ ! $NEMODIR && ( "$MODE" == "NEMO" || "$MODE" == "NEMO_3DVAR" ) ]]; then
     echo ${ERROR_MSG}
     exit
 fi
-if [[ "$MODE" != "STANDALONE" && "$MODE" != "POM1D" && "$MODE" != "OGS" && "$MODE" != "NEMO" && "$MODE" != "NEMO_3DVAR" && "$MODE" != "NEMO_CESM" ]]; then 
+if [[ "$MODE" != "STANDALONE" && "$MODE" != "POM1D" && "$MODE" != "OGS" && "$MODE" != "NEMO" && "$MODE" != "NEMO_3DVAR" && "$MODE" != "CMCC_ESM" ]]; then 
     echo "ERROR: MODE value not valid ($MODE). Available values are: STANDALONE or OGS or POM1D or NEMO or NEMO_3DVAR."
     echo ${ERROR_MSG}
     exit
@@ -300,7 +300,7 @@ addproto=""
 if [ "$MODE" == "OGS" ]; then
    addproto="BFM_var_list.h BFM1D_Output_Ecology.F90 namelist.passivetrc"
 fi
-if [[ "$MODE" == "NEMO" || "$MODE" == "NEMO_CESM" ]]; then
+if [[ "$MODE" == "NEMO" || "$MODE" == "CMCC_ESM" ]]; then
    addproto="field_def_bfm.xml file_def_bfm.xml"
 fi
 
@@ -477,7 +477,7 @@ if [ ${GEN} ]; then
         cp ${blddir}/INCLUDE.h ${BFMDIR}/src/BFM/include
         cp ${blddir}/bfm.fcm ${BFMDIR}/src/nemo${VER}
 
-    elif [ "$MODE" == "NEMO_CESM" ]; then
+    elif [ "$MODE" == "CMCC_ESM" ]; then
         # Move BFM Layout files namelists to configuration folders
         # note that here a relative path is used for CESM root dir
         cd ${BFMDIR}
@@ -499,7 +499,7 @@ fi
 # -----------------------------------------------------
 
 
-if [[ ${CMP} && "$MODE" != "NEMO_CESM" ]]; then
+if [[ ${CMP} && "$MODE" != "CMCC_ESM" ]]; then
     if [ ! -d ${blddir} ]; then
         echo "ERROR: directory ${blddir} not exists"
         echo ${ERROR_MSG}
@@ -556,7 +556,7 @@ fi
 # -----------------------------------------------------
 
 
-if [[ ${DEP} && "$MODE" != "NEMO_CESM" ]]; then
+if [[ ${DEP} && "$MODE" != "CMCC_ESM" ]]; then
     [ ${VERBOSE} ] && echo "creating Experiment ${PRESET}"
 
     #set run dir path
