@@ -203,7 +203,7 @@ CONTAINS
 #ifdef INCLUDE_PELFE
       ! Prescribe iron release from seabed sediments
       !-------------------------------------------------------
-      CALL seabed_iron_release
+      CALL seabed_iron_release(Kmm)
 #endif
       !
       IF (bfm_lwp) THEN
@@ -239,7 +239,7 @@ CONTAINS
    END FUNCTION trc_ini_my_trc_alloc
 
 
-   SUBROUTINE log_bgc_stats(kt, Kmm)
+   SUBROUTINE log_bgc_stats(kt, Kmm, Krhs)
       !!----------------------------------------------------------------------
       !!                 ***  log_bgc_stats  ***
       !!
@@ -250,7 +250,7 @@ CONTAINS
       USE api_bfm,    ONLY: var_names, stPelStateS, parallel_rank, NO_D3_BOX_STATES
       !
       INTEGER, INTENT(in) :: kt   ! ocean time-step index
-      INTEGER, INTENT(in) :: Kmm  ! time level indices
+      INTEGER, INTENT(in) :: Kmm, Krhs  ! time level indices
       INTEGER :: jn, jk, jl
       REAL(wp) :: ztraf, zmin, zmax, zmean
       REAL(wp), DIMENSION(jpi,jpj,jpk) :: zvol
@@ -289,7 +289,7 @@ CONTAINS
    END SUBROUTINE log_bgc_stats
 
 
-   SUBROUTINE seabed_iron_release()
+   SUBROUTINE seabed_iron_release(Kmm)
       !!----------------------------------------------------------------------
       !!                 ***  seabed_iron_release  ***
       !!
@@ -302,6 +302,7 @@ CONTAINS
       USE iom,        ONLY: iom_open,iom_get,iom_close
       USE par_my_trc, ONLY: bottom_level
       !
+      INTEGER, INTENT(in) ::   Kmm  ! time level indices
       INTEGER    :: ji, jj, jk, numfld
       REAL(RLEN) :: ztraf, zexp, zdexp
       LOGICAL    :: exists

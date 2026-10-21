@@ -75,7 +75,7 @@ CONTAINS
       ! Save to BFM log global statistics of tracers
       !-------------------------------------------------------
       IF ( (kt-nit000)<100 .OR. MOD(kt,200)==0 .OR. kt==nitend ) &
-         call log_bgc_stats(kt, Kmm)
+         call log_bgc_stats(kt, Kmm, Krhs)
 
       ! Update bfm internal time
       !-------------------------------------------------------
@@ -168,6 +168,10 @@ CONTAINS
       ! Compute Biogeochemical trends
       !---------------------------------------------
       call EcologyDynamics
+
+      where (d3source /= d3source)
+              d3source = 0
+      end where
 
       ! ODE solver for benthic and not transported pelagic
       ! & assign trend back main arrays
