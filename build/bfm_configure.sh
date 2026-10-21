@@ -481,13 +481,13 @@ if [ ${GEN} ]; then
         # Move BFM Layout files namelists to configuration folders
         # note that here a relative path is used for CESM root dir
         cd ${BFMDIR}
-        exedir="../cesm/models/ocn/nemo/BFM/configurations/${EXP}"
+        exedir="./esm/${EXP}"
         echo "Copy files to ${exedir}"
         mkdir -p ${exedir}
         cp ${blddir}/*.?90     ${exedir}
         cp ${blddir}/*.h       ${exedir}
         cp ${blddir}/*.nml     ${exedir}
-        cp ${presetdir}/*.xml  ${exedir}
+        cp ${blddir}/*.xml  ${exedir}
         cp ${blddir}/*top_cfg  ${exedir}
     fi
     echo "${PRESET} generation done!"
