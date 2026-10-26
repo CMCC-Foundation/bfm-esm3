@@ -298,7 +298,7 @@
   ! ksi = [H][SiO(OH)3]/[Si(OH)4]
   ! Millero (1995), p.671, eq. 72                        (seawater scale)
   ! -----------------------------------------------------------------------
-  ksi = -8904.2_RLEN*invtk + 117.400_RLEN - 19.334_RLEN * dlogtk + &
+  lnK = -8904.2_RLEN*invtk + 117.400_RLEN - 19.334_RLEN * dlogtk + &
        (-458.79_RLEN*invtk + 3.5913_RLEN) * sqrtis +               &
        (188.74_RLEN*invtk - 1.5998_RLEN) * is +                    &
        (-12.1652_RLEN*invtk + 0.07871_RLEN) * is2 +                &
@@ -534,10 +534,10 @@
       ELSE
         p_hini = 1.e-7_RLEN
       ENDIF
-    
-    Hini_for_at = p_hini 
-
     ENDIF
+
+    Hini_for_at = p_hini
+
     RETURN
   END FUNCTION hini_for_at
   
