@@ -108,7 +108,7 @@ SUBROUTINE trc_nam_bfm()
    ! Initialise memory arrays and log
    !-------------------------------------------------------
 #ifdef CCSMCOUPLED
-   CALL init_bfm( TRIM( logfile(4:len(logfile)) ) )
+   CALL init_bfm(TRIM(logfile))
 #else
    CALL init_bfm
 #endif

@@ -323,7 +323,7 @@ contains
        if (parallel_rank == 0) then
           bfm_lwp = .TRUE.
           logfname = 'bfm.log'
-          if ( PRESENT(cpllog) ) logfname='bfm'//TRIM(cpllog)
+          if ( PRESENT(cpllog) ) logfname='bfm.'//TRIM(cpllog)
        else 
           bfm_lwp = .FALSE.
           logfname = '/dev/null'
@@ -332,7 +332,7 @@ contains
        ! logs are produced for every process
        bfm_lwp = .TRUE.
        logfname = 'bfm_'//str//'.log'
-       if ( PRESENT(cpllog) ) logfname='bfm'//TRIM(cpllog)//'_'//str
+       if ( PRESENT(cpllog) ) logfname='bfm.'//TRIM(cpllog)//'_'//str
     end if
     open(LOGUNIT,file=logfname,action='write',  &
         form='formatted',err=100)
@@ -529,12 +529,12 @@ contains
 
    return
 98 FATAL 'I could not read BFM_General.nml'
-   stop 'init_bfm'
+   stop 'init_bfm 98' 
 99 LEVEL2 'I could not open BFM_General.nml'
    LEVEL2 'Simulation starting without the BFM'
    bio_calc = .false.
 100 FATAL 'Cannot create log file: ',trim(logfname)
-   stop 'init_bfm'
+   stop 'init_bfm 100'
 
   end subroutine init_bfm
 
