@@ -63,7 +63,7 @@ CONTAINS
       !! ** Method  : - Read the namcfc namelist and check the parameter values
       !!----------------------------------------------------------------------
       INTEGER, INTENT(in) ::   Kmm  ! time level indices
-      INTEGER :: ji, jj, jk, jn, jt
+      INTEGER :: ji, jj, jk, jn, jt, ierr
       !
       IF( ln_timing )   CALL timing_start('trc_ini_my_trc')
       !
@@ -71,7 +71,9 @@ CONTAINS
       IF(lwp) WRITE(numout,*) 'trc_ini_my_trc : initialize BFM tracers'
       IF(lwp) WRITE(numout,*) '~~~~~~~~~~~'
       !
-      IF( trc_ini_my_trc_alloc() /= 0 )   CALL ctl_stop( 'STOP', 'trc_ini_my_trc: unable to allocate MY_TRC arrays' )
+      ! Allocate memory
+      ierr = trc_ini_my_trc_alloc()
+      ierr = trc_opt_alloc()
       !
       LEVEL1 ' '
       LEVEL1 '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'
@@ -181,7 +183,9 @@ CONTAINS
          
       ! Initialize sea level pressure for gas exchange
       !-------------------------------------------------------
+#ifndef CCSMCOUPLED
       IF ( .NOT. ALLOCATED(apr)) ALLOCATE(apr(jpi,jpj))
+#endif
       IF (AtmSLP%init .NE. 3) apr = p_atm0
 #ifdef INCLUDE_PELCO2
       ! Initialize CO2 air concentration
