@@ -1,0 +1,182 @@
+! namtrc_run !-------------------------------------------------------------------------!
+!   OBGC namelist_top shipped with BFM configuration
+!   ln_top_euler  Euler timestepping SHOULD be set to TRUE
+!-------------------------------------------------------------------------!
+&namtrc_run        
+    ln_top_euler   =  .true.         
+    ln_rsttr       =  .false.        
+    nn_rsttr       =  0              
+    cn_trcrst_in   =  'restart_trc'  
+    cn_trcrst_out  =  'restart_trc'  
+/                  
+
+
+
+! namtrc !-------------------------------------------------------------------------!
+!   ln_my_trc    Run MY_TRC BGC model
+!   ln_age       Run the sea water age tracer
+!   ln_cfc12     Run the CFC12 passive tracer
+!   ln_sf6       Run the SF6 passive tracer
+!   ln_trcbc     Surface, Lateral or Open Boundaries conditions
+!   sn_tracer(1) is a dummy tracer to let NEMO know that there is a model
+!   NOTE: ln_trcdta is internally set by bfm based on BFM_General settings
+!-------------------------------------------------------------------------!
+&namtrc           
+    ln_my_trc     =  .false.  
+    ln_age        =  .false.  
+    ln_cfc12      =  .false.  
+    ln_sf6        =  .false.  
+    ln_trcbc      =  .true.   
+    sn_tracer(1)  =  'DUMMY'  'Dummy tracer'  'dummy units'  .false.  .false.  
+/                 
+
+
+
+&namage               
+    rn_age_depth      =  10            
+    rn_age_kill_rate  =  -0.000138888  
+/                     
+
+
+
+! namtrc_adv !-------------------------------------------------------------------------!
+!   advection scheme for passive tracer 
+!   ln_trcadv_mus      MUSCL scheme
+!   ln_mus_ups         use upstream scheme near river mouths
+!-------------------------------------------------------------------------!
+&namtrc_adv        
+    ln_trcadv_mus  =  .true.   
+    ln_mus_ups     =  .false.  
+/                  
+
+
+
+! namtrc_ldf !-------------------------------------------------------------------------!
+!   lateral diffusion scheme for passive tracer 
+!-------------------------------------------------------------------------!
+&namtrc_ldf        
+    ln_trcldf_OFF  =  .false.  
+    ln_trcldf_tra  =  .true.   
+/                  
+
+
+
+! namtrc_rad !-------------------------------------------------------------------------!
+!  treatment of negative concentrations 
+!  ln_trcrad   artificially correct negative concentrations (T) or not (F)
+!-------------------------------------------------------------------------!
+&namtrc_rad    
+    ln_trcrad  =  .true.  
+/              
+
+
+
+! namtrc_dmp !-------------------------------------------------------------------------!
+!   Not used with BFM
+!   passive tracer newtonian damping
+!-------------------------------------------------------------------------!
+&namtrc_dmp  
+/            
+
+
+
+! namtrc_ice  ! tracer concentration in sea ice 
+!    =-1 (no vvl: identical cc in ice and ocean / vvl: cc_ice = 0)
+!    = 0 (no vvl: cc_ice = zero / vvl: cc_ice = )
+!    = 1 prescribed to a namelist value (implemented in pisces only)
+!-------------------------------------------------------------------------!
+&namtrc_ice    
+    nn_ice_tr  =  -1  
+/              
+
+
+
+! namtrc_trd !-------------------------------------------------------------------------!
+!   Not used with BFM
+!   diagnostics on tracer trends        ('key_trdtrc')
+!          or mixed-layer trends          ('key_trdmld_trc')
+!-------------------------------------------------------------------------!
+&namtrc_trd  
+/            
+
+
+
+! namtrc_dia !-------------------------------------------------------------------------!
+!   Not used with BFM
+!   parameters for passive tracer additional diagnostics
+!-------------------------------------------------------------------------!
+&namtrc_dia  
+/            
+
+
+
+! namtrc_dta !-------------------------------------------------------------------------!
+!   Initialisation from data input file
+!   for each BFM variable set the structure sn_trcdta(VARNAME)
+!   !  file name    ! frequency (hours) ! variable   ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea
+!   !               !  (if <0  months)  !   name     !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! mask
+!   and the conversion factor rn_trfac(VARNAME)
+!-------------------------------------------------------------------------!
+&namtrc_dta        
+    sn_trcdta(1)   =  'DOX_1m_nomask'  -1   'DOX'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcdta(2)   =  'PO4_1m_nomask'  -1   'PO4'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcdta(3)   =  'NO3_1m_nomask'  -1   'NO3'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcdta(5)   =  'SIL_1m_nomask'  -1   'SIL'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcdta(6)   =  'DFE_1m_nomask'  -1   'DFE'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcdta(21)  =  'DIC_1y_nomask'  -12  'DIC'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcdta(22)  =  'ALK_1y_nomask'  -12  'ALK'  .false.  .true.  'yearly'  ''  ''  ''  
+    cn_dir         =  './'             
+    rn_trfac(1)    =  1.0              
+    rn_trfac(2)    =  1.0              
+    rn_trfac(3)    =  1.0              
+    rn_trfac(5)    =  1.0              
+    rn_trfac(6)    =  1.0              
+    rn_trfac(21)   =  12.011e-03       
+    rn_trfac(22)   =  1.0e-03          
+/                  
+
+
+
+! namtrc_bc !-----------------------------------------------------------------------
+!   Set input files for surface (s), coastal (c) or open (o) boundary
+!   conditions for each BFM variable 
+!   sn_trc?bc(VARNAME): structure with file name and interpolatio
+!   rn_tr?fac(VARNAME): conversion factor
+!              ! file name   ! frequency (hr) ! variable ! time interp. ! clim    !'yearly' or ! weights  ! rotation | land/sea
+!              !             !  (if <0 mon)   !   name   !  (logical)   ! (T/F)   ! 'monthly'  ! filename ! pairing  | mask
+!-----------------------------------------------------------------------
+&namtrc_bc         
+    sn_trcsbc(3)   =  'N_DEPOSITION'     -1   'NOy'       .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcsbc(4)   =  'N_DEPOSITION'     -1   'NHx'       .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trcsbc(6)   =  'DUST_DEPOSITION'  -1   'dust'      .false.  .true.  'yearly'  ''  ''  ''  
+    rn_trsfac(3)   =  6171428571.42857   
+    rn_trsfac(4)   =  6171428571.42857   
+    rn_trsfac(6)   =  6.26678603         
+    sn_trccbc(2)   =  'OBGC_RIVER_LOAD'  -12  'RIVERDIP'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(3)   =  'OBGC_RIVER_LOAD'  -12  'RIVERDIN'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(5)   =  'OBGC_RIVER_LOAD'  -12  'RIVERDSI'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(6)   =  'OBGC_RIVER_LOAD'  -12  'RIVERDFE'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(24)  =  'OBGC_RIVER_LOAD'  -12  'RIVERDOC'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(25)  =  'OBGC_RIVER_LOAD'  -12  'RIVERDON'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(26)  =  'OBGC_RIVER_LOAD'  -12  'RIVERDOP'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(21)  =  'OBGC_RIVER_LOAD'  -12  'RIVERDIC'  .false.  .true.  'yearly'  ''  ''  ''  
+    sn_trccbc(22)  =  'OBGC_RIVER_LOAD'  -12  'RIVERDIC'  .false.  .true.  'yearly'  ''  ''  ''  
+    rn_trcfac(2)   =  8.8464e+10         
+    rn_trcfac(3)   =  1.9556e+11         
+    rn_trcfac(5)   =  9.7534e+10         
+    rn_trcfac(6)   =  4.9055e+13         
+    rn_trcfac(24)  =  2.7397e+12         
+    rn_trcfac(25)  =  1.9556e+11         
+    rn_trcfac(26)  =  8.8464e+10         
+    rn_trcfac(21)  =  2.7397e+12         
+    rn_trcfac(22)  =  2.2812e+11         
+    cn_dir_sbc     =  './'               
+    cn_dir_cbc     =  './'               
+    cn_dir_obc     =  './'               
+    ln_rnf_ctl     =  .true.             
+    rn_sbc_time    =  86400.             
+    rn_cbc_time    =  86400.             
+/                  
+
+
+
