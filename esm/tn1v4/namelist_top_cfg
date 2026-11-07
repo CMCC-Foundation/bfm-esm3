@@ -86,7 +86,7 @@
 !    = 1 prescribed to a namelist value (implemented in pisces only)
 !-------------------------------------------------------------------------!
 &namtrc_ice    
-    nn_ice_tr  =  -1  
+    nn_ice_tr  =  0  
 /              
 
 

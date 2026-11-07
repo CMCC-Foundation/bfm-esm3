@@ -19,209 +19,397 @@
 
     <field_group id="pel_state_3D" grid_ref="grid_T_3D">
       <field id="O2o"      long_name="Oxygen"    	unit="mmol O2/m3"/>
+      <field id="O2o_e3t"      long_name="O2o_e3t"    	unit="mmol O2/m3"> O2o * e3t </field>
       <field id="N1p"      long_name="Phosphate"    	unit="mmol P/m3"/>
+      <field id="N1p_e3t"      long_name="N1p_e3t"    	unit="mmol P/m3"> N1p * e3t </field>
       <field id="N3n"      long_name="Nitrate"    	unit="mmol N/m3"/>
+      <field id="N3n_e3t"      long_name="N3n_e3t"    	unit="mmol N/m3"> N3n * e3t </field>
       <field id="N4n"      long_name="Ammonium"    	unit="mmol N/m3"/>
+      <field id="N4n_e3t"      long_name="N4n_e3t"    	unit="mmol N/m3"> N4n * e3t </field>
       <field id="N5s"      long_name="Silicate"    	unit="mmol Si/m3"/>
+      <field id="N5s_e3t"      long_name="N5s_e3t"    	unit="mmol Si/m3"> N5s * e3t </field>
       <field id="N7f"      long_name="Bioavailable Iron"    	unit="umol Fe/m3"/>
+      <field id="N7f_e3t"      long_name="N7f_e3t"    	unit="umol Fe/m3"> N7f * e3t </field>
       <field id="B1c"      long_name="Aerobic and Anaerobic Bacteria"    	unit="mg C/m3"/>
+      <field id="B1c_e3t"      long_name="B1c_e3t"    	unit="mg C/m3"> B1c * e3t </field>
       <field id="P1c"      long_name="Diatoms"    	unit="mg C/m3"/>
+      <field id="P1c_e3t"      long_name="P1c_e3t"    	unit="mg C/m3"> P1c * e3t </field>
       <field id="P1n"      long_name="Diatoms"    	unit="mmol N/m3"/>
+      <field id="P1n_e3t"      long_name="P1n_e3t"    	unit="mmol N/m3"> P1n * e3t </field>
       <field id="P1p"      long_name="Diatoms"    	unit="mmol P/m3"/>
+      <field id="P1p_e3t"      long_name="P1p_e3t"    	unit="mmol P/m3"> P1p * e3t </field>
       <field id="P1l"      long_name="Diatoms"    	unit="mg Chl/m3"/>
+      <field id="P1l_e3t"      long_name="P1l_e3t"    	unit="mg Chl/m3"> P1l * e3t </field>
       <field id="P1s"      long_name="Diatoms"    	unit="mmol Si/m3"/>
+      <field id="P1s_e3t"      long_name="P1s_e3t"    	unit="mmol Si/m3"> P1s * e3t </field>
       <field id="P1f"      long_name="Diatoms"    	unit="umol Fe/m3"/>
+      <field id="P1f_e3t"      long_name="P1f_e3t"    	unit="umol Fe/m3"> P1f * e3t </field>
       <field id="P2c"      long_name="Flagellates"    	unit="mg C/m3"/>
+      <field id="P2c_e3t"      long_name="P2c_e3t"    	unit="mg C/m3"> P2c * e3t </field>
       <field id="P2n"      long_name="Flagellates"    	unit="mmol N/m3"/>
+      <field id="P2n_e3t"      long_name="P2n_e3t"    	unit="mmol N/m3"> P2n * e3t </field>
       <field id="P2p"      long_name="Flagellates"    	unit="mmol P/m3"/>
+      <field id="P2p_e3t"      long_name="P2p_e3t"    	unit="mmol P/m3"> P2p * e3t </field>
       <field id="P2l"      long_name="Flagellates"    	unit="mg Chl/m3"/>
+      <field id="P2l_e3t"      long_name="P2l_e3t"    	unit="mg Chl/m3"> P2l * e3t </field>
       <field id="P2f"      long_name="Flagellates"    	unit="umol Fe/m3"/>
+      <field id="P2f_e3t"      long_name="P2f_e3t"    	unit="umol Fe/m3"> P2f * e3t </field>
       <field id="Z4c"      long_name="Omnivorous Mesozooplankton"    	unit="mg C/m3"/>
+      <field id="Z4c_e3t"      long_name="Z4c_e3t"    	unit="mg C/m3"> Z4c * e3t </field>
       <field id="Z5c"      long_name="Microzooplankton"    	unit="mg C/m3"/>
+      <field id="Z5c_e3t"      long_name="Z5c_e3t"    	unit="mg C/m3"> Z5c * e3t </field>
       <field id="O3c"      long_name="Dissolved Inorganic Carbon"    	unit="mg C/m3"/>
+      <field id="O3c_e3t"      long_name="O3c_e3t"    	unit="mg C/m3"> O3c * e3t </field>
       <field id="O3h"      long_name="Dissolved Inorganic Carbon"    	unit="mmol eq/m3"/>
+      <field id="O3h_e3t"      long_name="O3h_e3t"    	unit="mmol eq/m3"> O3h * e3t </field>
       <field id="O5c"      long_name="Calcite"    	unit="mg C/m3"/>
+      <field id="O5c_e3t"      long_name="O5c_e3t"    	unit="mg C/m3"> O5c * e3t </field>
       <field id="R1c"      long_name="Labile Dissolved Organic Matter"    	unit="mg C/m3"/>
+      <field id="R1c_e3t"      long_name="R1c_e3t"    	unit="mg C/m3"> R1c * e3t </field>
       <field id="R1n"      long_name="Labile Dissolved Organic Matter"    	unit="mmol N/m3"/>
+      <field id="R1n_e3t"      long_name="R1n_e3t"    	unit="mmol N/m3"> R1n * e3t </field>
       <field id="R1p"      long_name="Labile Dissolved Organic Matter"    	unit="mmol P/m3"/>
+      <field id="R1p_e3t"      long_name="R1p_e3t"    	unit="mmol P/m3"> R1p * e3t </field>
       <field id="R1f"      long_name="Labile Dissolved Organic Matter"    	unit="umol Fe/m3"/>
+      <field id="R1f_e3t"      long_name="R1f_e3t"    	unit="umol Fe/m3"> R1f * e3t </field>
       <field id="R6c"      long_name="Particulate Organic Matter"    	unit="mg C/m3"/>
+      <field id="R6c_e3t"      long_name="R6c_e3t"    	unit="mg C/m3"> R6c * e3t </field>
       <field id="R6n"      long_name="Particulate Organic Matter"    	unit="mmol N/m3"/>
+      <field id="R6n_e3t"      long_name="R6n_e3t"    	unit="mmol N/m3"> R6n * e3t </field>
       <field id="R6p"      long_name="Particulate Organic Matter"    	unit="mmol P/m3"/>
+      <field id="R6p_e3t"      long_name="R6p_e3t"    	unit="mmol P/m3"> R6p * e3t </field>
       <field id="R6s"      long_name="Particulate Organic Matter"    	unit="mmol Si/m3"/>
+      <field id="R6s_e3t"      long_name="R6s_e3t"    	unit="mmol Si/m3"> R6s * e3t </field>
       <field id="R6f"      long_name="Particulate Organic Matter"    	unit="umol Fe/m3"/>
+      <field id="R6f_e3t"      long_name="R6f_e3t"    	unit="umol Fe/m3"> R6f * e3t </field>
       <field id="R3c"      long_name="Semi-refractory Dissolved Organic Carbon"    	unit="mg C/m3"/>
+      <field id="R3c_e3t"      long_name="R3c_e3t"    	unit="mg C/m3"> R3c * e3t </field>
       <field id="R2c"      long_name="Semi-labile Dissolved Organic Carbon"    	unit="mg C/m3"/>
+      <field id="R2c_e3t"      long_name="R2c_e3t"    	unit="mg C/m3"> R2c * e3t </field>
       <field id="N6r"      long_name="Reduction Equivalents"    	unit="mmol S--/m3"/>
+      <field id="N6r_e3t"      long_name="N6r_e3t"    	unit="mmol S--/m3"> N6r * e3t </field>
       <field id="O4n"      long_name="NitrogenSink"    	unit="mmol N/m3"/>
+      <field id="O4n_e3t"      long_name="O4n_e3t"    	unit="mmol N/m3"> O4n * e3t </field>
     </field_group>
 
 
     <field_group id="pel_diagnos_3D" grid_ref="grid_T_3D">
       <field id="Depth"      long_name="Gridpoint Depth"    	unit="m"/>
+      <field id="Depth_e3t"      long_name="Depth_e3t"    	unit="m"> Depth * e3t </field>
       <field id="Volume"      long_name="Gridpoint Volume"    	unit="m3"/>
+      <field id="Volume_e3t"      long_name="Volume_e3t"    	unit="m3"> Volume * e3t </field>
       <field id="Area"      long_name="Gridpoint Area"    	unit="m2"/>
+      <field id="Area_e3t"      long_name="Area_e3t"    	unit="m2"> Area * e3t </field>
       <field id="ETW"      long_name="temperature"    	unit="C"/>
+      <field id="ETW_e3t"      long_name="ETW_e3t"    	unit="C"> ETW * e3t </field>
       <field id="ESW"      long_name="Salinity"    	unit="-"/>
+      <field id="ESW_e3t"      long_name="ESW_e3t"    	unit="-"> ESW * e3t </field>
       <field id="ERHO"      long_name="Seawater Density"    	unit="kg/m3"/>
+      <field id="ERHO_e3t"      long_name="ERHO_e3t"    	unit="kg/m3"> ERHO * e3t </field>
       <field id="EIR"      long_name="Irradiance"    	unit="uE/m2/s"/>
+      <field id="EIR_e3t"      long_name="EIR_e3t"    	unit="uE/m2/s"> EIR * e3t </field>
       <field id="ESS"      long_name="Suspended Sediments"    	unit="g/m3"/>
+      <field id="ESS_e3t"      long_name="ESS_e3t"    	unit="g/m3"> ESS * e3t </field>
       <field id="EPR"      long_name="Water Pressure"    	unit="dbar"/>
+      <field id="EPR_e3t"      long_name="EPR_e3t"    	unit="dbar"> EPR * e3t </field>
       <field id="DIC"      long_name="Dissolved Inorganic Carbon"    	unit="umol/kg"/>
+      <field id="DIC_e3t"      long_name="DIC_e3t"    	unit="umol/kg"> DIC * e3t </field>
       <field id="CO2"      long_name="CO2(aq)"    	unit="umol/kg"/>
+      <field id="CO2_e3t"      long_name="CO2_e3t"    	unit="umol/kg"> CO2 * e3t </field>
       <field id="pCO2"      long_name="Oceanic pCO2"    	unit="uatm"/>
+      <field id="pCO2_e3t"      long_name="pCO2_e3t"    	unit="uatm"> pCO2 * e3t </field>
       <field id="HCO3"      long_name="Bicarbonate"    	unit="umol/kg"/>
+      <field id="HCO3_e3t"      long_name="HCO3_e3t"    	unit="umol/kg"> HCO3 * e3t </field>
       <field id="CO3"      long_name="Carbonate"    	unit="umol/kg"/>
+      <field id="CO3_e3t"      long_name="CO3_e3t"    	unit="umol/kg"> CO3 * e3t </field>
       <field id="ALK"      long_name="Alkalinity"    	unit="umol eq/kg"/>
+      <field id="ALK_e3t"      long_name="ALK_e3t"    	unit="umol eq/kg"> ALK * e3t </field>
       <field id="pH"      long_name="pH"    	unit="-"/>
+      <field id="pH_e3t"      long_name="pH_e3t"    	unit="-"> pH * e3t </field>
       <field id="OCalc"      long_name="Saturation state of Calcite"    	unit="-"/>
+      <field id="OCalc_e3t"      long_name="OCalc_e3t"    	unit="-"> OCalc * e3t </field>
       <field id="OArag"      long_name="Saturation state of Aragonite"    	unit="-"/>
+      <field id="OArag_e3t"      long_name="OArag_e3t"    	unit="-"> OArag * e3t </field>
       <field id="ffCO2"      long_name="CO2 fugacity"    	unit="uatm"/>
+      <field id="ffCO2_e3t"      long_name="ffCO2_e3t"    	unit="uatm"> ffCO2 * e3t </field>
       <field id="totpelc"      long_name="Total Mass in Pelagic"    	unit="g C"/>
+      <field id="totpelc_e3t"      long_name="totpelc_e3t"    	unit="g C"> totpelc * e3t </field>
       <field id="totpeln"      long_name="Total Mass in Pelagic"    	unit="g N"/>
+      <field id="totpeln_e3t"      long_name="totpeln_e3t"    	unit="g N"> totpeln * e3t </field>
       <field id="totpelp"      long_name="Total Mass in Pelagic"    	unit="g P"/>
+      <field id="totpelp_e3t"      long_name="totpelp_e3t"    	unit="g P"> totpelp * e3t </field>
       <field id="totpels"      long_name="Total Mass in Pelagic"    	unit="g Si"/>
+      <field id="totpels_e3t"      long_name="totpels_e3t"    	unit="g Si"> totpels * e3t </field>
       <field id="totpelf"      long_name="Total Mass in Pelagic"    	unit="g Fe"/>
+      <field id="totpelf_e3t"      long_name="totpelf_e3t"    	unit="g Fe"> totpelf * e3t </field>
       <field id="cxoO2"      long_name="Oxygen Saturation"    	unit="mmol O2/m3"/>
+      <field id="cxoO2_e3t"      long_name="cxoO2_e3t"    	unit="mmol O2/m3"> cxoO2 * e3t </field>
       <field id="eO2mO2"      long_name="Relative Oxygen saturation"    	unit="-"/>
+      <field id="eO2mO2_e3t"      long_name="eO2mO2_e3t"    	unit="-"> eO2mO2 * e3t </field>
       <field id="Chla"      long_name="Chlorophyll-a"    	unit="mg Chl/m3"/>
+      <field id="Chla_e3t"      long_name="Chla_e3t"    	unit="mg Chl/m3"> Chla * e3t </field>
       <field id="flPTN6r"      long_name="Pelagic Anaerobic Mineralization Rate"    	unit="mmol O2/m3/d"/>
+      <field id="flPTN6r_e3t"      long_name="flPTN6r_e3t"    	unit="mmol O2/m3/d"> flPTN6r * e3t </field>
       <field id="flN3O4n"      long_name="Pelagic Denitrification Rate"    	unit="mmol N/m3/d"/>
+      <field id="flN3O4n_e3t"      long_name="flN3O4n_e3t"    	unit="mmol N/m3/d"> flN3O4n * e3t </field>
       <field id="flN4N3n"      long_name="Pelagic Nitrification Rate"    	unit="mmol N/m3/d"/>
+      <field id="flN4N3n_e3t"      long_name="flN4N3n_e3t"    	unit="mmol N/m3/d"> flN4N3n * e3t </field>
       <field id="fscavN7f"      long_name="Pelagic Fe Scavenging Rate"    	unit="umol Fe/m3/d"/>
+      <field id="fscavN7f_e3t"      long_name="fscavN7f_e3t"    	unit="umol Fe/m3/d"> fscavN7f * e3t </field>
       <field id="IRONDEPO"      long_name="Aerosol deposition of Iron"    	unit="umol Fe/m3/s"/>
+      <field id="IRONDEPO_e3t"      long_name="IRONDEPO_e3t"    	unit="umol Fe/m3/s"> IRONDEPO * e3t </field>
       <field id="sediR2"      long_name="Colloidal OMT sedimentation rate"    	unit="m/d"/>
+      <field id="sediR2_e3t"      long_name="sediR2_e3t"    	unit="m/d"> sediR2 * e3t </field>
       <field id="sediR3"      long_name="Refractory OMT sedimentation rate"    	unit="m/d"/>
+      <field id="sediR3_e3t"      long_name="sediR3_e3t"    	unit="m/d"> sediR3 * e3t </field>
       <field id="sediR6"      long_name="Detritus sedimentation rate"    	unit="m/d"/>
+      <field id="sediR6_e3t"      long_name="sediR6_e3t"    	unit="m/d"> sediR6 * e3t </field>
       <field id="sediO5"      long_name="Calcite sedimentation rate"    	unit="m/d"/>
+      <field id="sediO5_e3t"      long_name="sediO5_e3t"    	unit="m/d"> sediO5 * e3t </field>
       <field id="xEPS"      long_name="Total Extinction Coefficient"    	unit="1/m"/>
+      <field id="xEPS_e3t"      long_name="xEPS_e3t"    	unit="1/m"> xEPS * e3t </field>
       <field id="ABIO_eps"      long_name="Abiotic Extinction Coefficient"    	unit="1/m"/>
+      <field id="ABIO_eps_e3t"      long_name="ABIO_eps_e3t"    	unit="1/m"> ABIO_eps * e3t </field>
       <field id="BGE"      long_name="Bac growth efficiency"    	unit="-"/>
+      <field id="BGE_e3t"      long_name="BGE_e3t"    	unit="-"> BGE * e3t </field>
       <field id="BIOALK"      long_name="O3h biological rate of change"    	unit="mmol/m3"/>
+      <field id="BIOALK_e3t"      long_name="BIOALK_e3t"    	unit="mmol/m3"> BIOALK * e3t </field>
       <field id="DMS"      long_name="Dimethyl sulfide"    	unit="pmol/m3"/>
+      <field id="DMS_e3t"      long_name="DMS_e3t"    	unit="pmol/m3"> DMS * e3t </field>
     </field_group>
 
 
     <field_group id="pel_diaggrp_3D" grid_ref="grid_T_3D">
       <field id="qpcPPY_iiP1"      long_name="Quotum P/C in Phytoplankton"    	unit="mmol P/mg C"/>
+      <field id="qpcPPY_iiP1_e3t"      long_name="qpcPPY_iiP1_e3t"    	unit="mmol P/mg C"> qpcPPY_iiP1 * e3t </field>
       <field id="qpcPPY_iiP2"      long_name="Quotum P/C in Phytoplankton"    	unit="mmol P/mg C"/>
+      <field id="qpcPPY_iiP2_e3t"      long_name="qpcPPY_iiP2_e3t"    	unit="mmol P/mg C"> qpcPPY_iiP2 * e3t </field>
       <field id="qncPPY_iiP1"      long_name="Quotum N/C in Phytoplankton"    	unit="mmol N/mg C"/>
+      <field id="qncPPY_iiP1_e3t"      long_name="qncPPY_iiP1_e3t"    	unit="mmol N/mg C"> qncPPY_iiP1 * e3t </field>
       <field id="qncPPY_iiP2"      long_name="Quotum N/C in Phytoplankton"    	unit="mmol N/mg C"/>
+      <field id="qncPPY_iiP2_e3t"      long_name="qncPPY_iiP2_e3t"    	unit="mmol N/mg C"> qncPPY_iiP2 * e3t </field>
       <field id="qscPPY_iiP1"      long_name="Quotum Si/C in Phytoplankton"    	unit="mmol Si/mg C"/>
+      <field id="qscPPY_iiP1_e3t"      long_name="qscPPY_iiP1_e3t"    	unit="mmol Si/mg C"> qscPPY_iiP1 * e3t </field>
       <field id="qscPPY_iiP2"      long_name="Quotum Si/C in Phytoplankton"    	unit="mmol Si/mg C"/>
+      <field id="qscPPY_iiP2_e3t"      long_name="qscPPY_iiP2_e3t"    	unit="mmol Si/mg C"> qscPPY_iiP2 * e3t </field>
       <field id="qlcPPY_iiP1"      long_name="Quotum Chl/C in Phytoplankton"    	unit="mg Chl /mg C"/>
+      <field id="qlcPPY_iiP1_e3t"      long_name="qlcPPY_iiP1_e3t"    	unit="mg Chl /mg C"> qlcPPY_iiP1 * e3t </field>
       <field id="qlcPPY_iiP2"      long_name="Quotum Chl/C in Phytoplankton"    	unit="mg Chl /mg C"/>
+      <field id="qlcPPY_iiP2_e3t"      long_name="qlcPPY_iiP2_e3t"    	unit="mg Chl /mg C"> qlcPPY_iiP2 * e3t </field>
       <field id="qfcPPY_iiP1"      long_name="Quotum Fe/C in Phytoplankton"    	unit="umol Fe/mg C"/>
+      <field id="qfcPPY_iiP1_e3t"      long_name="qfcPPY_iiP1_e3t"    	unit="umol Fe/mg C"> qfcPPY_iiP1 * e3t </field>
       <field id="qfcPPY_iiP2"      long_name="Quotum Fe/C in Phytoplankton"    	unit="umol Fe/mg C"/>
+      <field id="qfcPPY_iiP2_e3t"      long_name="qfcPPY_iiP2_e3t"    	unit="umol Fe/mg C"> qfcPPY_iiP2 * e3t </field>
       <field id="qccPPY_iiP1"      long_name="Quotum PIC/POC in Phytoplankton"    	unit="mg C/mg C"/>
+      <field id="qccPPY_iiP1_e3t"      long_name="qccPPY_iiP1_e3t"    	unit="mg C/mg C"> qccPPY_iiP1 * e3t </field>
       <field id="qccPPY_iiP2"      long_name="Quotum PIC/POC in Phytoplankton"    	unit="mg C/mg C"/>
+      <field id="qccPPY_iiP2_e3t"      long_name="qccPPY_iiP2_e3t"    	unit="mg C/mg C"> qccPPY_iiP2 * e3t </field>
       <field id="qpcMEZ_iiZ4"      long_name="Quotum P/C in Mesozooplankton"    	unit="mmol P/mg C"/>
+      <field id="qpcMEZ_iiZ4_e3t"      long_name="qpcMEZ_iiZ4_e3t"    	unit="mmol P/mg C"> qpcMEZ_iiZ4 * e3t </field>
       <field id="qncMEZ_iiZ4"      long_name="Quotum N/C in Mesozooplankton"    	unit="mmol N/mg C"/>
+      <field id="qncMEZ_iiZ4_e3t"      long_name="qncMEZ_iiZ4_e3t"    	unit="mmol N/mg C"> qncMEZ_iiZ4 * e3t </field>
       <field id="qpcMIZ_iiZ5"      long_name="Quotum P/C in Z5(MicroZooPlankton)"    	unit="mmol P/mg C"/>
+      <field id="qpcMIZ_iiZ5_e3t"      long_name="qpcMIZ_iiZ5_e3t"    	unit="mmol P/mg C"> qpcMIZ_iiZ5 * e3t </field>
       <field id="qncMIZ_iiZ5"      long_name="Quotum N/C in Z5(MicroZooPlankton)"    	unit="mmol N/mg C"/>
+      <field id="qncMIZ_iiZ5_e3t"      long_name="qncMIZ_iiZ5_e3t"    	unit="mmol N/mg C"> qncMIZ_iiZ5 * e3t </field>
       <field id="qpcOMT_iiR1"      long_name="Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="qpcOMT_iiR1_e3t"      long_name="qpcOMT_iiR1_e3t"    	unit="mmol N/mg C"> qpcOMT_iiR1 * e3t </field>
       <field id="qpcOMT_iiR6"      long_name="Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="qpcOMT_iiR6_e3t"      long_name="qpcOMT_iiR6_e3t"    	unit="mmol N/mg C"> qpcOMT_iiR6 * e3t </field>
       <field id="qpcOMT_iiR3"      long_name="Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="qpcOMT_iiR3_e3t"      long_name="qpcOMT_iiR3_e3t"    	unit="mmol N/mg C"> qpcOMT_iiR3 * e3t </field>
       <field id="qpcOMT_iiR2"      long_name="Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="qpcOMT_iiR2_e3t"      long_name="qpcOMT_iiR2_e3t"    	unit="mmol N/mg C"> qpcOMT_iiR2 * e3t </field>
       <field id="qncOMT_iiR1"      long_name="Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="qncOMT_iiR1_e3t"      long_name="qncOMT_iiR1_e3t"    	unit="mmol P/mg C"> qncOMT_iiR1 * e3t </field>
       <field id="qncOMT_iiR6"      long_name="Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="qncOMT_iiR6_e3t"      long_name="qncOMT_iiR6_e3t"    	unit="mmol P/mg C"> qncOMT_iiR6 * e3t </field>
       <field id="qncOMT_iiR3"      long_name="Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="qncOMT_iiR3_e3t"      long_name="qncOMT_iiR3_e3t"    	unit="mmol P/mg C"> qncOMT_iiR3 * e3t </field>
       <field id="qncOMT_iiR2"      long_name="Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="qncOMT_iiR2_e3t"      long_name="qncOMT_iiR2_e3t"    	unit="mmol P/mg C"> qncOMT_iiR2 * e3t </field>
       <field id="qscOMT_iiR1"      long_name="Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="qscOMT_iiR1_e3t"      long_name="qscOMT_iiR1_e3t"    	unit="mmol Si/mg C"> qscOMT_iiR1 * e3t </field>
       <field id="qscOMT_iiR6"      long_name="Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="qscOMT_iiR6_e3t"      long_name="qscOMT_iiR6_e3t"    	unit="mmol Si/mg C"> qscOMT_iiR6 * e3t </field>
       <field id="qscOMT_iiR3"      long_name="Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="qscOMT_iiR3_e3t"      long_name="qscOMT_iiR3_e3t"    	unit="mmol Si/mg C"> qscOMT_iiR3 * e3t </field>
       <field id="qscOMT_iiR2"      long_name="Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="qscOMT_iiR2_e3t"      long_name="qscOMT_iiR2_e3t"    	unit="mmol Si/mg C"> qscOMT_iiR2 * e3t </field>
       <field id="qfcOMT_iiR1"      long_name="Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="qfcOMT_iiR1_e3t"      long_name="qfcOMT_iiR1_e3t"    	unit="umol Fe/mg C"> qfcOMT_iiR1 * e3t </field>
       <field id="qfcOMT_iiR6"      long_name="Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="qfcOMT_iiR6_e3t"      long_name="qfcOMT_iiR6_e3t"    	unit="umol Fe/mg C"> qfcOMT_iiR6 * e3t </field>
       <field id="qfcOMT_iiR3"      long_name="Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="qfcOMT_iiR3_e3t"      long_name="qfcOMT_iiR3_e3t"    	unit="umol Fe/mg C"> qfcOMT_iiR3 * e3t </field>
       <field id="qfcOMT_iiR2"      long_name="Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="qfcOMT_iiR2_e3t"      long_name="qfcOMT_iiR2_e3t"    	unit="umol Fe/mg C"> qfcOMT_iiR2 * e3t </field>
       <field id="qpcPBA_iiB1"      long_name="Quotum P/C in Pelagic Bacteria"    	unit="mmol P/mg C"/>
+      <field id="qpcPBA_iiB1_e3t"      long_name="qpcPBA_iiB1_e3t"    	unit="mmol P/mg C"> qpcPBA_iiB1 * e3t </field>
       <field id="qncPBA_iiB1"      long_name="Quotum N/C in Pelagic Bacteria"    	unit="mmol N/mg C"/>
+      <field id="qncPBA_iiB1_e3t"      long_name="qncPBA_iiB1_e3t"    	unit="mmol N/mg C"> qncPBA_iiB1 * e3t </field>
       <field id="sediPPY_iiP1"      long_name="P1(PhytoPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="sediPPY_iiP1_e3t"      long_name="sediPPY_iiP1_e3t"    	unit="m/d"> sediPPY_iiP1 * e3t </field>
       <field id="sediPPY_iiP2"      long_name="P2(PhytoPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="sediPPY_iiP2_e3t"      long_name="sediPPY_iiP2_e3t"    	unit="m/d"> sediPPY_iiP2 * e3t </field>
       <field id="sediMIZ_iiZ5"      long_name="Z5(MicroZooPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="sediMIZ_iiZ5_e3t"      long_name="sediMIZ_iiZ5_e3t"    	unit="m/d"> sediMIZ_iiZ5 * e3t </field>
       <field id="sediMEZ_iiZ4"      long_name="Z4(MesoZooPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="sediMEZ_iiZ4_e3t"      long_name="sediMEZ_iiZ4_e3t"    	unit="m/d"> sediMEZ_iiZ4 * e3t </field>
       <field id="sunPPY_iiP1"      long_name="Specific Net Production of P1(PhytoPlankton)"    	unit="1/d"/>
+      <field id="sunPPY_iiP1_e3t"      long_name="sunPPY_iiP1_e3t"    	unit="1/d"> sunPPY_iiP1 * e3t </field>
       <field id="sunPPY_iiP2"      long_name="Specific Net Production of P2(PhytoPlankton)"    	unit="1/d"/>
+      <field id="sunPPY_iiP2_e3t"      long_name="sunPPY_iiP2_e3t"    	unit="1/d"> sunPPY_iiP2 * e3t </field>
       <field id="eiPPY_iiP1"      long_name="Regulating Factor for Light in P1(PhytoPlankton)"    	unit="-"/>
+      <field id="eiPPY_iiP1_e3t"      long_name="eiPPY_iiP1_e3t"    	unit="-"> eiPPY_iiP1 * e3t </field>
       <field id="eiPPY_iiP2"      long_name="Regulating Factor for Light in P2(PhytoPlankton)"    	unit="-"/>
+      <field id="eiPPY_iiP2_e3t"      long_name="eiPPY_iiP2_e3t"    	unit="-"> eiPPY_iiP2 * e3t </field>
       <field id="ELiPPY_iiP1"      long_name="Optimal light in P1(PhytoPlankton)"    	unit="W/m2"/>
+      <field id="ELiPPY_iiP1_e3t"      long_name="ELiPPY_iiP1_e3t"    	unit="W/m2"> ELiPPY_iiP1 * e3t </field>
       <field id="ELiPPY_iiP2"      long_name="Optimal light in P2(PhytoPlankton)"    	unit="W/m2"/>
+      <field id="ELiPPY_iiP2_e3t"      long_name="ELiPPY_iiP2_e3t"    	unit="W/m2"> ELiPPY_iiP2 * e3t </field>
     </field_group>
 
 
     <field_group id="pel_flux_3D" grid_ref="grid_T_3D">
       <field id="ruPPYc"      long_name="Gross Primary Production"    	unit="mg C/m3/d"/>
+      <field id="ruPPYc_e3t"      long_name="ruPPYc_e3t"    	unit="mg C/m3/d"> ruPPYc * e3t </field>
       <field id="ruPPYc1"      long_name="Diatoms GPP"    	unit="mg C/m3/d"/>
+      <field id="ruPPYc1_e3t"      long_name="ruPPYc1_e3t"    	unit="mg C/m3/d"> ruPPYc1 * e3t </field>
       <field id="ruPPYc2"      long_name="Flagellates GPP"    	unit="mg C/m3/d"/>
+      <field id="ruPPYc2_e3t"      long_name="ruPPYc2_e3t"    	unit="mg C/m3/d"> ruPPYc2 * e3t </field>
       <field id="resPPYc"      long_name="Phytoplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="resPPYc_e3t"      long_name="resPPYc_e3t"    	unit="mg C/m3/d"> resPPYc * e3t </field>
       <field id="resPPYc1"      long_name="Diatoms Respiration"    	unit="mg C/m3/d"/>
+      <field id="resPPYc1_e3t"      long_name="resPPYc1_e3t"    	unit="mg C/m3/d"> resPPYc1 * e3t </field>
       <field id="resPPYc2"      long_name="Flagellates Respiration"    	unit="mg C/m3/d"/>
+      <field id="resPPYc2_e3t"      long_name="resPPYc2_e3t"    	unit="mg C/m3/d"> resPPYc2 * e3t </field>
       <field id="resPBAc"      long_name="Bacterial Respiration"    	unit="mg C/m3/d"/>
+      <field id="resPBAc_e3t"      long_name="resPBAc_e3t"    	unit="mg C/m3/d"> resPBAc * e3t </field>
       <field id="resZOOc"      long_name="Zooplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="resZOOc_e3t"      long_name="resZOOc_e3t"    	unit="mg C/m3/d"> resZOOc * e3t </field>
       <field id="resZOOc4"      long_name="Zooplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="resZOOc4_e3t"      long_name="resZOOc4_e3t"    	unit="mg C/m3/d"> resZOOc4 * e3t </field>
       <field id="resZOOc5"      long_name="Zooplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="resZOOc5_e3t"      long_name="resZOOc5_e3t"    	unit="mg C/m3/d"> resZOOc5 * e3t </field>
       <field id="prdO5c"      long_name="Calcite production"    	unit="mgC/m3/d"/>
+      <field id="prdO5c_e3t"      long_name="prdO5c_e3t"    	unit="mgC/m3/d"> prdO5c * e3t </field>
       <field id="exPPYc"      long_name="C excretion from Phytoplankton"    	unit="mg C/m3/d"/>
+      <field id="exPPYc_e3t"      long_name="exPPYc_e3t"    	unit="mg C/m3/d"> exPPYc * e3t </field>
       <field id="exPPYc1"      long_name="Diatoms excretion"    	unit="mg C/m3/d"/>
+      <field id="exPPYc1_e3t"      long_name="exPPYc1_e3t"    	unit="mg C/m3/d"> exPPYc1 * e3t </field>
       <field id="exPPYc2"      long_name="Flagellates excretion"    	unit="mg C/m3/d"/>
+      <field id="exPPYc2_e3t"      long_name="exPPYc2_e3t"    	unit="mg C/m3/d"> exPPYc2 * e3t </field>
       <field id="ruZOOc"      long_name="Gross/Net Secondary Production"    	unit="mg C/m3/d"/>
+      <field id="ruZOOc_e3t"      long_name="ruZOOc_e3t"    	unit="mg C/m3/d"> ruZOOc * e3t </field>
       <field id="ruPZOOc"      long_name="Zooplankton Predation on Phytoplankton"    	unit="mg C/m3/d"/>
+      <field id="ruPZOOc_e3t"      long_name="ruPZOOc_e3t"    	unit="mg C/m3/d"> ruPZOOc * e3t </field>
       <field id="ruBZOOc"      long_name="Zooplankton Predation on Bacterioplankton"    	unit="mg C/m3/d"/>
+      <field id="ruBZOOc_e3t"      long_name="ruBZOOc_e3t"    	unit="mg C/m3/d"> ruBZOOc * e3t </field>
       <field id="ruZZOOc"      long_name="Zooplankton Predation on Zooplankton"    	unit="mg C/m3/d"/>
+      <field id="ruZZOOc_e3t"      long_name="ruZZOOc_e3t"    	unit="mg C/m3/d"> ruZZOOc * e3t </field>
       <field id="ruPBAc"      long_name="Bacterioplankton uptake from Detritus"    	unit="mg C/m3/d"/>
+      <field id="ruPBAc_e3t"      long_name="ruPBAc_e3t"    	unit="mg C/m3/d"> ruPBAc * e3t </field>
       <field id="ruR1PBAc"      long_name="Bacteria Uptake of DOC"    	unit="mg C/m3/d"/>
+      <field id="ruR1PBAc_e3t"      long_name="ruR1PBAc_e3t"    	unit="mg C/m3/d"> ruR1PBAc * e3t </field>
       <field id="ruR6PBAc"      long_name="Bacteria Uptake of POC"    	unit="mg C/m3/d"/>
+      <field id="ruR6PBAc_e3t"      long_name="ruR6PBAc_e3t"    	unit="mg C/m3/d"> ruR6PBAc * e3t </field>
       <field id="exPBAc"      long_name="C excretion from Bacterioplankton"    	unit="mg C/m3/d"/>
+      <field id="exPBAc_e3t"      long_name="exPBAc_e3t"    	unit="mg C/m3/d"> exPBAc * e3t </field>
       <field id="exZOOc"      long_name="C excretion from Zooplankton"    	unit="mg C/m3/d"/>
+      <field id="exZOOc_e3t"      long_name="exZOOc_e3t"    	unit="mg C/m3/d"> exZOOc * e3t </field>
       <field id="exPPYp"      long_name="P excretion from Phytoplankton"    	unit="mmolP/m3/d"/>
+      <field id="exPPYp_e3t"      long_name="exPPYp_e3t"    	unit="mmolP/m3/d"> exPPYp * e3t </field>
       <field id="ruPPYn"      long_name="Net Nitrogen Uptake"    	unit="mmol N/m3/d"/>
+      <field id="ruPPYn_e3t"      long_name="ruPPYn_e3t"    	unit="mmol N/m3/d"> ruPPYn * e3t </field>
       <field id="ruPPYp"      long_name="Net Phosphate Uptake"    	unit="mmol P/m3/d"/>
+      <field id="ruPPYp_e3t"      long_name="ruPPYp_e3t"    	unit="mmol P/m3/d"> ruPPYp * e3t </field>
       <field id="ruPPYf"      long_name="Net Iron Uptake"    	unit="umol Fe/m3/d"/>
+      <field id="ruPPYf_e3t"      long_name="ruPPYf_e3t"    	unit="umol Fe/m3/d"> ruPPYf * e3t </field>
       <field id="ruPPYs"      long_name="Net Silicate Uptake"    	unit="mmol Si/m3/d"/>
+      <field id="ruPPYs_e3t"      long_name="ruPPYs_e3t"    	unit="mmol Si/m3/d"> ruPPYs * e3t </field>
       <field id="exPPYs"      long_name="biogenic Si loss from phytoplankton"    	unit="mmol Si/m3/d"/>
+      <field id="exPPYs_e3t"      long_name="exPPYs_e3t"    	unit="mmol Si/m3/d"> exPPYs * e3t </field>
       <field id="remR6s"      long_name="remineralization of detrital Si"    	unit="mmol Si/m3/d"/>
+      <field id="remR6s_e3t"      long_name="remR6s_e3t"    	unit="mmol Si/m3/d"> remR6s * e3t </field>
       <field id="resPELo"      long_name="Pelagic Oxygen Demand"    	unit="mmol O2/m3/d"/>
+      <field id="resPELo_e3t"      long_name="resPELo_e3t"    	unit="mmol O2/m3/d"> resPELo * e3t </field>
     </field_group>
 
 
     <field_group id="pel_state_3D_sinking" grid_ref="grid_T_3D">
       <field id="sinkO2o"      long_name="sinking of O2o"    	unit="mmol O2/m2/day"/>
+      <field id="sinkO2o_e3t"      long_name="sinkO2o_e3t"    	unit="mmol O2/m2/day"> sinkO2o * e3t </field>
       <field id="sinkN1p"      long_name="sinking of N1p"    	unit="mmol P/m2/day"/>
+      <field id="sinkN1p_e3t"      long_name="sinkN1p_e3t"    	unit="mmol P/m2/day"> sinkN1p * e3t </field>
       <field id="sinkN3n"      long_name="sinking of N3n"    	unit="mmol N/m2/day"/>
+      <field id="sinkN3n_e3t"      long_name="sinkN3n_e3t"    	unit="mmol N/m2/day"> sinkN3n * e3t </field>
       <field id="sinkN4n"      long_name="sinking of N4n"    	unit="mmol N/m2/day"/>
+      <field id="sinkN4n_e3t"      long_name="sinkN4n_e3t"    	unit="mmol N/m2/day"> sinkN4n * e3t </field>
       <field id="sinkN5s"      long_name="sinking of N5s"    	unit="mmol Si/m2/day"/>
+      <field id="sinkN5s_e3t"      long_name="sinkN5s_e3t"    	unit="mmol Si/m2/day"> sinkN5s * e3t </field>
       <field id="sinkN7f"      long_name="sinking of N7f"    	unit="umol Fe/m2/day"/>
+      <field id="sinkN7f_e3t"      long_name="sinkN7f_e3t"    	unit="umol Fe/m2/day"> sinkN7f * e3t </field>
       <field id="sinkB1c"      long_name="sinking of B1c"    	unit="mg C/m2/day"/>
+      <field id="sinkB1c_e3t"      long_name="sinkB1c_e3t"    	unit="mg C/m2/day"> sinkB1c * e3t </field>
       <field id="sinkP1c"      long_name="sinking of P1c"    	unit="mg C/m2/day"/>
+      <field id="sinkP1c_e3t"      long_name="sinkP1c_e3t"    	unit="mg C/m2/day"> sinkP1c * e3t </field>
       <field id="sinkP1n"      long_name="sinking of P1n"    	unit="mmol N/m2/day"/>
+      <field id="sinkP1n_e3t"      long_name="sinkP1n_e3t"    	unit="mmol N/m2/day"> sinkP1n * e3t </field>
       <field id="sinkP1p"      long_name="sinking of P1p"    	unit="mmol P/m2/day"/>
+      <field id="sinkP1p_e3t"      long_name="sinkP1p_e3t"    	unit="mmol P/m2/day"> sinkP1p * e3t </field>
       <field id="sinkP1l"      long_name="sinking of P1l"    	unit="mg Chl/m2/day"/>
+      <field id="sinkP1l_e3t"      long_name="sinkP1l_e3t"    	unit="mg Chl/m2/day"> sinkP1l * e3t </field>
       <field id="sinkP1s"      long_name="sinking of P1s"    	unit="mmol Si/m2/day"/>
+      <field id="sinkP1s_e3t"      long_name="sinkP1s_e3t"    	unit="mmol Si/m2/day"> sinkP1s * e3t </field>
       <field id="sinkP1f"      long_name="sinking of P1f"    	unit="umol Fe/m2/day"/>
+      <field id="sinkP1f_e3t"      long_name="sinkP1f_e3t"    	unit="umol Fe/m2/day"> sinkP1f * e3t </field>
       <field id="sinkP2c"      long_name="sinking of P2c"    	unit="mg C/m2/day"/>
+      <field id="sinkP2c_e3t"      long_name="sinkP2c_e3t"    	unit="mg C/m2/day"> sinkP2c * e3t </field>
       <field id="sinkP2n"      long_name="sinking of P2n"    	unit="mmol N/m2/day"/>
+      <field id="sinkP2n_e3t"      long_name="sinkP2n_e3t"    	unit="mmol N/m2/day"> sinkP2n * e3t </field>
       <field id="sinkP2p"      long_name="sinking of P2p"    	unit="mmol P/m2/day"/>
+      <field id="sinkP2p_e3t"      long_name="sinkP2p_e3t"    	unit="mmol P/m2/day"> sinkP2p * e3t </field>
       <field id="sinkP2l"      long_name="sinking of P2l"    	unit="mg Chl/m2/day"/>
+      <field id="sinkP2l_e3t"      long_name="sinkP2l_e3t"    	unit="mg Chl/m2/day"> sinkP2l * e3t </field>
       <field id="sinkP2f"      long_name="sinking of P2f"    	unit="umol Fe/m2/day"/>
+      <field id="sinkP2f_e3t"      long_name="sinkP2f_e3t"    	unit="umol Fe/m2/day"> sinkP2f * e3t </field>
       <field id="sinkZ4c"      long_name="sinking of Z4c"    	unit="mg C/m2/day"/>
+      <field id="sinkZ4c_e3t"      long_name="sinkZ4c_e3t"    	unit="mg C/m2/day"> sinkZ4c * e3t </field>
       <field id="sinkZ5c"      long_name="sinking of Z5c"    	unit="mg C/m2/day"/>
+      <field id="sinkZ5c_e3t"      long_name="sinkZ5c_e3t"    	unit="mg C/m2/day"> sinkZ5c * e3t </field>
       <field id="sinkO3c"      long_name="sinking of O3c"    	unit="mg C/m2/day"/>
+      <field id="sinkO3c_e3t"      long_name="sinkO3c_e3t"    	unit="mg C/m2/day"> sinkO3c * e3t </field>
       <field id="sinkO3h"      long_name="sinking of O3h"    	unit="mmol eq/m2/day"/>
+      <field id="sinkO3h_e3t"      long_name="sinkO3h_e3t"    	unit="mmol eq/m2/day"> sinkO3h * e3t </field>
       <field id="sinkO5c"      long_name="sinking of O5c"    	unit="mg C/m2/day"/>
+      <field id="sinkO5c_e3t"      long_name="sinkO5c_e3t"    	unit="mg C/m2/day"> sinkO5c * e3t </field>
       <field id="sinkR1c"      long_name="sinking of R1c"    	unit="mg C/m2/day"/>
+      <field id="sinkR1c_e3t"      long_name="sinkR1c_e3t"    	unit="mg C/m2/day"> sinkR1c * e3t </field>
       <field id="sinkR1n"      long_name="sinking of R1n"    	unit="mmol N/m2/day"/>
+      <field id="sinkR1n_e3t"      long_name="sinkR1n_e3t"    	unit="mmol N/m2/day"> sinkR1n * e3t </field>
       <field id="sinkR1p"      long_name="sinking of R1p"    	unit="mmol P/m2/day"/>
+      <field id="sinkR1p_e3t"      long_name="sinkR1p_e3t"    	unit="mmol P/m2/day"> sinkR1p * e3t </field>
       <field id="sinkR1f"      long_name="sinking of R1f"    	unit="umol Fe/m2/day"/>
+      <field id="sinkR1f_e3t"      long_name="sinkR1f_e3t"    	unit="umol Fe/m2/day"> sinkR1f * e3t </field>
       <field id="sinkR6c"      long_name="sinking of R6c"    	unit="mg C/m2/day"/>
+      <field id="sinkR6c_e3t"      long_name="sinkR6c_e3t"    	unit="mg C/m2/day"> sinkR6c * e3t </field>
       <field id="sinkR6n"      long_name="sinking of R6n"    	unit="mmol N/m2/day"/>
+      <field id="sinkR6n_e3t"      long_name="sinkR6n_e3t"    	unit="mmol N/m2/day"> sinkR6n * e3t </field>
       <field id="sinkR6p"      long_name="sinking of R6p"    	unit="mmol P/m2/day"/>
+      <field id="sinkR6p_e3t"      long_name="sinkR6p_e3t"    	unit="mmol P/m2/day"> sinkR6p * e3t </field>
       <field id="sinkR6s"      long_name="sinking of R6s"    	unit="mmol Si/m2/day"/>
+      <field id="sinkR6s_e3t"      long_name="sinkR6s_e3t"    	unit="mmol Si/m2/day"> sinkR6s * e3t </field>
       <field id="sinkR6f"      long_name="sinking of R6f"    	unit="umol Fe/m2/day"/>
+      <field id="sinkR6f_e3t"      long_name="sinkR6f_e3t"    	unit="umol Fe/m2/day"> sinkR6f * e3t </field>
       <field id="sinkR3c"      long_name="sinking of R3c"    	unit="mg C/m2/day"/>
+      <field id="sinkR3c_e3t"      long_name="sinkR3c_e3t"    	unit="mg C/m2/day"> sinkR3c * e3t </field>
       <field id="sinkR2c"      long_name="sinking of R2c"    	unit="mg C/m2/day"/>
+      <field id="sinkR2c_e3t"      long_name="sinkR2c_e3t"    	unit="mg C/m2/day"> sinkR2c * e3t </field>
       <field id="sinkN6r"      long_name="sinking of N6r"    	unit="mmol S--/m2/day"/>
+      <field id="sinkN6r_e3t"      long_name="sinkN6r_e3t"    	unit="mmol S--/m2/day"> sinkN6r * e3t </field>
       <field id="sinkO4n"      long_name="sinking of O4n"    	unit="mmol N/m2/day"/>
+      <field id="sinkO4n_e3t"      long_name="sinkO4n_e3t"    	unit="mmol N/m2/day"> sinkO4n * e3t </field>
     </field_group>
 
 
