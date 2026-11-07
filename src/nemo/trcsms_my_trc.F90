@@ -302,7 +302,7 @@ CONTAINS
       USE SystemForcing, ONLY: FieldRead
       USE mem_CO2,       ONLY: AtmSLP, patm3d
       USE mem_PAR,       ONLY: ChlAttenFlag
-      USE mem,           ONLY: iiPhytoPlankton, iiC, iiL, ppPhytoPlankton, ppN1p, ppN5s
+      USE mem,           ONLY: iiPhytoPlankton, iiC, iiL, ppPhytoPlankton, ppN1p, ppN5s, EIR
       USE mem_Phyto,     ONLY: p_qlcPPY
       USE constants,     ONLY: E2W
 #ifdef INCLUDE_PELCO2
@@ -404,11 +404,11 @@ CONTAINS
 
       ! print control on received fluxes
       !-------------------------------------------------------
-      !IF ( (kt-nittrc000)<20 .OR. MOD(kt,200)==0 .OR. kt==nitend) THEN
-      !   write(LOGUNIT,'(a,i14,a,f10.4,a,f10.3,a,f10.3)') 'envforcing_bfm - Step ', kt,  &
-      !      '  Air_xCO2: ',maxval(AtmCO2%fnow), '  SLP:', maxval(AtmSLP%fnow),   &
-      !      ' EIR: ',maxval(EIR)
-      !ENDIF
+      IF ( (kt-nittrc000)<20 .OR. MOD(kt,200)==0 .OR. kt==nitend) THEN
+         IF (bfm_lwp) write(LOGUNIT,'(a,i14,a,f10.4,a,f10.3,a,f10.3)') 'envforcing_bfm - Step ', kt,  &
+            '  Air_xCO2: ',maxval(AtmCO2%fnow), '  SLP:', maxval(AtmSLP%fnow),   &
+            ' EIR: ',maxval(EIR)
+      ENDIF
 
    END SUBROUTINE update_bgc_forcings
 
