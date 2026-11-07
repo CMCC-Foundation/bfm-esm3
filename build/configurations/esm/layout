@@ -316,6 +316,7 @@ end
   ruPPYn=(P.n <- N3n+N4n): Net Nitrogen Uptake:mmol N/m3/d
   ruPPYp=P.p <- N1p : Net Phosphate Uptake : mmol P/m3/d
   ruPPYf=P.f <- N7f : Net Iron Uptake : umol Fe/m3/d
+  ruPPYs=P.s <- N5s : Net Silicate Uptake : mmol Si/m3/d
   exPPYs=(P.s -> R6s): biogenic Si loss from phytoplankton :mmol Si/m3/d
   remR6s=(R6s -> N5s): remineralization of detrital Si: mmol Si/m3/d
   resPELo=(O2o->*) : Pelagic Oxygen Demand : mmol O2/m3/d
