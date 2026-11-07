@@ -110,7 +110,7 @@ foreach my $idx ( 0 .. $#PROTOS_NAME ){
     my $name = $PROTOS_NAME[$idx];
     my $ext  = $PROTOS_EXT[$idx];
     if( $DEBUG ){ print "---------- ${name} ini \n"; }
-    print_f90("$proto_dir/${name}.proto", "$out_dir/${name}.${ext}", \%lst_group, \%lst_param, \%lst_sta, \%lst_const, \%lst_index, \@lst_nml, $DEBUG);
+    print_f90("$proto_dir/${name}.proto", "$out_dir/${name}.${ext}", \%lst_group, \%lst_param, \%lst_sta, \%lst_const, \%lst_index, \@lst_nml, join(' ',@cpp_defs), $DEBUG);
     if( $DEBUG ){ print "---------- ${name} end \n\n"; }
 }
 

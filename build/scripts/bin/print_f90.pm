@@ -45,7 +45,7 @@ my $SPACE = "   ";
 my $MAX_CHAR_PER_LINE = 76;
 my $STRING_INDEX=1;
 my %STRING_INDEX_ARRAY = ();
-my ( $LST_PARAM, $LST_GROUP, $LST_STA, $LST_CONST, $LST_INDEX, $LST_NML );
+my ( $LST_PARAM, $LST_GROUP, $LST_STA, $LST_CONST, $LST_INDEX, $LST_NML, $CPP_DEFS );
 ########### VARIABLES GLOBAL ##########################
 
 
@@ -129,7 +129,7 @@ my $dispatch = {
 
 sub print_f90 {
 
-    my ($templ_mem, $output, $lst_group, $lst_param, $lst_sta, $lst_const, $lst_index, $lst_nml, $debug) = @_;
+    my ($templ_mem, $output, $lst_group, $lst_param, $lst_sta, $lst_const, $lst_index, $lst_nml, $cpp_defs, $debug) = @_;
 
     $LST_PARAM = $lst_param;
     $LST_GROUP = $lst_group;
@@ -137,6 +137,7 @@ sub print_f90 {
     $LST_CONST = $lst_const;
     $LST_INDEX = $lst_index;
     $LST_NML = $lst_nml;
+    $CPP_DEFS = $cpp_defs;
     $DEBUG   = $debug;
 
     #open the template file
@@ -2200,7 +2201,7 @@ sub func_FLUX_COUPLED{
 
 sub func_XMLFIELD  {
     my ( $file, $dim, $type, $subt, $spec ) = @_;
-    if ( $DEBUG ){ print "field_def_top.xml -> FUNCTION CALLED func_XMLFIELD: $dim, $type, $subt"; }
+    if ( $DEBUG ){ print "field_def_bfm.xml -> FUNCTION CALLED func_XMLFIELD: $dim, $type, $subt"; }
 
     my $line  = "";
     my $TAB4 = " " x 4  ;
@@ -2211,6 +2212,7 @@ sub func_XMLFIELD  {
     my $fldname = "" ;
     my $spec_short = "" ;
     #my $title = "${type}_${subt}_${dim}";
+    my $vvl = func_ocean_variable_volume();
 
     # control to generate pelagic surface, bottom, river diagnostics
     if ($spec) { $grpdim = 3; $type = 'state'; $fldname = "_$spec" ; $spec_short = substr($spec,0,3);}
@@ -2240,6 +2242,9 @@ sub func_XMLFIELD  {
                       my $nameP = $name . "_ii$param_name";
                       my $commP = $comm;$commP =~ s/$group_name/$param_name\($group_name\)/;
                       $line .= "${TAB6}<field id=\"${nameP}\"${TAB6}long_name=\"${commP}\"${TAB5}unit=\"${unit}\"/>\n";
+                      if (${dim} eq "3" && $vvl == 1){
+                         $line .= "${TAB6}<field id=\"${nameP}_e3t\"${TAB6}long_name=\"${nameP}_e3t\"${TAB5}unit=\"${unit}\"> ${nameP} * e3t </field>\n";
+                      }
                   }
               }
             } else {
@@ -2261,6 +2266,9 @@ sub func_XMLFIELD  {
                              }
                           }
                           $line .= "${TAB6}<field id=\"${nameC}\"${TAB6}long_name=\"${comm}\"${TAB5}unit=\"${unitC}\"/>\n";
+                          if (${dim} eq "3" && $vvl == 1){
+                             $line .= "${TAB6}<field id=\"${nameC}_e3t\"${TAB6}long_name=\"${nameC}_e3t\"${TAB5}unit=\"${unitC}\"> ${nameC} * e3t </field>\n";
+                          }
                       }
                   }
               }else{
@@ -2277,6 +2285,9 @@ sub func_XMLFIELD  {
                      }
                   }                
                   $line .= "${TAB6}<field id=\"${name}\"${TAB6}long_name=\"${comm}\"${TAB5}unit=\"${unit}\"/>\n";
+                  if (${dim} eq "3" && $vvl == 1){
+                     $line .= "${TAB6}<field id=\"${name}_e3t\"${TAB6}long_name=\"${name}_e3t\"${TAB5}unit=\"${unit}\"> ${name} * e3t </field>\n";
+                  }
               }
             }
         }
@@ -2289,10 +2300,11 @@ sub func_XMLFIELD  {
 
 sub func_XMLFILE {
     my ( $file ) = @_;
-    if ( $DEBUG ){ print "file_def_top.xml -> FUNCTION CALLED func_XMLFILE: "; }
+    if ( $DEBUG ){ print "file_def_bfm.xml -> FUNCTION CALLED func_XMLFILE: "; }
 
     my $line = '';
     my $TAB8 = " " x 8 ;
+    my $vvl = func_ocean_variable_volume();
 
     my @meanvar = '' ;  my @instvar = '' ;  
  
@@ -2313,19 +2325,115 @@ sub func_XMLFILE {
     # Variables requested as time average
     foreach my $name (@meanvar) {
        my $addinst="";
+       my $dim = (func_variable_dim($name));
        if ( grep( /^$name$/, @instvar ) ) {$addinst=" operation=\"instant\" ";}
+       if ($vvl == 0) {
           $line .= "${TAB8}  <field field_ref=\"${name}\"  ${addinst}    />\n";
-    }
-    # Add ivariables requested as inst values not inclueded before
-    foreach my $name (@instvar) {
-       my $addinst="";
-       if ( grep( /^$name$/, @meanvar ) == 0) {
-          $line .= "${TAB8}  <field field_ref=\"${name}\"  operation=\"instant\"   />\n";
+       } else {
+          if ($dim == 2) {
+             $line .= "${TAB8}  <field field_ref=\"${name}\"  ${addinst}    />\n";
+          } else {
+             $line .= "${TAB8}  <field field_ref=\"${name}\" name=\"${name}\" operation=\"instant\" freq_op=\"1mo\" > \@${name}_e3t / \@e3t  </field>\n";
+          }
        }
     }
+    ## Add variables requested as inst values not inclueded before
+    #foreach my $name (@instvar) {
+    #   my $addinst="";
+    #   if ( grep( /^$name$/, @meanvar ) == 0) {
+    #      $line .= "${TAB8}  <field field_ref=\"${name}\"  operation=\"instant\"   />\n";
+    #   }
+    #}
 
     $line .= "${TAB8}</file>\n";
 
     if( $line ){ print $file $line; }
 
+}
+
+# Return the dimension (2 or 3) of an output variable name, as used in
+# ave_save / var_save. The name can be:
+#   - a root variable name                       (e.g. "ETW")
+#   - a variable with constituent suffix         (e.g. "P1c")
+#   - a diaggrp member                           (e.g. "ruPTc_iiP1")
+#   - a field of a spec (sinking, surface, ...)  (e.g. "sinkP1c", "jsurO3c")
+# If the name cannot be resolved a warning is printed and 3 is returned
+# (3D is the default branch used by func_XMLFILE).
+sub func_variable_dim {
+    my ( $name ) = @_;
+    if ( $DEBUG ){ print "$name -> FUNCTION CALLED func_variable_dim\n"; }
+
+    my $dim = _variable_dim_lookup($name);
+
+    if( !defined $dim && $name =~ /^sink(.+)$/ ){
+        # sinking velocity fields are 3D
+        $dim = 3 if defined _variable_dim_lookup($1);
+    }
+    if( !defined $dim && $name =~ /^j[a-zA-Z]{3}(.+)$/ ){
+        # surface/bottom/river flux fields are 2D
+        $dim = 2 if defined _variable_dim_lookup($1);
+    }
+
+    if( !defined $dim ){
+        print "WARNING: dimension of variable \"$name\" not found. Assuming 3D\n";
+        return 3;
+    }
+    return $dim;
+}
+
+# Look for $name among parameters, parameters+constituents and diaggrp members.
+# Returns the dimension or undef if not found.
+sub _variable_dim_lookup {
+    my ( $name ) = @_;
+
+    # 1) direct hit
+    if( exists $$LST_PARAM{$name} ){ return $$LST_PARAM{$name}->getDim(); }
+
+    foreach my $root ( keys %$LST_PARAM ){
+        my $param = $$LST_PARAM{$root};
+
+        # 2) root + constituent (e.g. P1 + c)
+        foreach my $compo ( $param->getComponents(), $param->getComponentsEx() ){
+            if( $compo && ref($compo) eq 'HASH' ){
+                foreach my $const ( keys %$compo ){
+                    if( $name eq $root . $const ){ return $param->getDim(); }
+                }
+            }
+        }
+
+        # 3) diaggrp member (root_iimember)
+        my $group_name = $param->getQuota();
+        if( $group_name && $name =~ /^\Q$root\E_ii(.+)$/ ){
+            my $member = $1;
+            foreach my $name2 ( keys %$LST_PARAM ){
+                my $param2 = $$LST_PARAM{$name2};
+                if( $param2->getGroup() && $param2->getGroup() eq $group_name
+                    && $param2->getSigla() eq $member ){
+                    return $param->getDim();
+                }
+            }
+        }
+    }
+
+    return undef;
+}
+
+# NEMO keys must be added in configuration file
+sub func_ocean_variable_volume {
+    my @keys = ( 'NEMO_VVL', );
+    if( !defined $CPP_DEFS ){ return 0; }
+
+    my @defs;
+    if   ( ref($CPP_DEFS) eq 'ARRAY' ){ @defs = @$CPP_DEFS;      }
+    elsif( ref($CPP_DEFS) eq 'HASH'  ){ @defs = keys %$CPP_DEFS; }
+    else                              { @defs = ( $CPP_DEFS );   }
+
+    foreach my $def ( map { split /[\s,]+/ } grep { defined } @defs ){
+        $def =~ s/^-D//;     # strip compiler flag
+        $def =~ s/=.*$//;    # strip value
+        foreach my $key (@keys){
+            if( $def eq $key ){ return 1; }
+        }
+    }
+    return 0;
 }

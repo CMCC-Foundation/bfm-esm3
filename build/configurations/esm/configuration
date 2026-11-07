@@ -22,10 +22,11 @@
 #  INCLUDE_PELFE    : add Iron component to the pelagic system
 #  INCLUDE_PELCO2   : activate Pelagic Carbonate System and CO2 dynamics 
 #  BENTHIC_BIO      : use Intermediate complexity Benthic system
+#  NEMO_VVL         : create xml files compliant with NEMO variable volume scheme
 
 &BFM_conf
         MODE     = 'CMCC_ESM',
-        CPPDEFS  = 'BFM_NOPOINTERS BFM_PARALLEL INCLUDE_PELCO2 INCLUDE_PELFE',
+        CPPDEFS  = 'BFM_NOPOINTERS BFM_PARALLEL INCLUDE_PELCO2 INCLUDE_PELFE NEMO_VVL',
         EXP      = 'tn1v4',
         EXPFILES = 'file_def_bfm.xml',
 /
