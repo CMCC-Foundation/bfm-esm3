@@ -63,6 +63,7 @@ CONTAINS
       DO jn = 1, jp_bgc
          cltra = TRIM( ctrcnm(jn) )                  ! short title for tracer
          CALL iom_put( cltra, tr(:,:,:,jn,Kmm) )
+         IF( iom_use('os'//cltra) ) CALL iom_put( 'os'//cltra, tr(:,:,1,jn,Kmm) )
       END DO
       ! Benthic
       DO jn = 1, jp_bgc_b
@@ -82,6 +83,7 @@ CONTAINS
       DO jn = 1 , jp_dia3d
          cltra = TRIM( var_names(id_dia3d(jn)) )
          CALL iom_put( cltra, trc3d(:,:,:,jn) )
+         IF( iom_use('os'//cltra) ) CALL iom_put( 'os'//cltra, trc3d(:,:,1,jn) )
       ENDDO
       ! 2-D
       DO jn = 1 , jp_dia2d
