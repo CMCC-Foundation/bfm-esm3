@@ -514,6 +514,175 @@
 
 
 
+    <field_group id="pel_state_2D_os" grid_ref="grid_T_2D">
+      <field id="osO2o"      long_name="Surface Oxygen"    	unit="mmol O2/m3"/>
+      <field id="osN1p"      long_name="Surface Phosphate"    	unit="mmol P/m3"/>
+      <field id="osN3n"      long_name="Surface Nitrate"    	unit="mmol N/m3"/>
+      <field id="osN4n"      long_name="Surface Ammonium"    	unit="mmol N/m3"/>
+      <field id="osN5s"      long_name="Surface Silicate"    	unit="mmol Si/m3"/>
+      <field id="osN7f"      long_name="Surface Bioavailable Iron"    	unit="umol Fe/m3"/>
+      <field id="osB1c"      long_name="Surface Aerobic and Anaerobic Bacteria C"    	unit="mg C/m3"/>
+      <field id="osP1c"      long_name="Surface Diatoms C"    	unit="mg C/m3"/>
+      <field id="osP1n"      long_name="Surface Diatoms N"    	unit="mmol N/m3"/>
+      <field id="osP1p"      long_name="Surface Diatoms P"    	unit="mmol P/m3"/>
+      <field id="osP1l"      long_name="Surface Diatoms L"    	unit="mg Chl/m3"/>
+      <field id="osP1s"      long_name="Surface Diatoms S"    	unit="mmol Si/m3"/>
+      <field id="osP1f"      long_name="Surface Diatoms F"    	unit="umol Fe/m3"/>
+      <field id="osP2c"      long_name="Surface Flagellates C"    	unit="mg C/m3"/>
+      <field id="osP2n"      long_name="Surface Flagellates N"    	unit="mmol N/m3"/>
+      <field id="osP2p"      long_name="Surface Flagellates P"    	unit="mmol P/m3"/>
+      <field id="osP2l"      long_name="Surface Flagellates L"    	unit="mg Chl/m3"/>
+      <field id="osP2f"      long_name="Surface Flagellates F"    	unit="umol Fe/m3"/>
+      <field id="osZ4c"      long_name="Surface Omnivorous Mesozooplankton C"    	unit="mg C/m3"/>
+      <field id="osZ5c"      long_name="Surface Microzooplankton C"    	unit="mg C/m3"/>
+      <field id="osO3c"      long_name="Surface Dissolved Inorganic Carbon C"    	unit="mg C/m3"/>
+      <field id="osO3h"      long_name="Surface Dissolved Inorganic Carbon H"    	unit="mmol eq/m3"/>
+      <field id="osO5c"      long_name="Surface Calcite C"    	unit="mg C/m3"/>
+      <field id="osR1c"      long_name="Surface Labile Dissolved Organic Matter C"    	unit="mg C/m3"/>
+      <field id="osR1n"      long_name="Surface Labile Dissolved Organic Matter N"    	unit="mmol N/m3"/>
+      <field id="osR1p"      long_name="Surface Labile Dissolved Organic Matter P"    	unit="mmol P/m3"/>
+      <field id="osR1f"      long_name="Surface Labile Dissolved Organic Matter F"    	unit="umol Fe/m3"/>
+      <field id="osR6c"      long_name="Surface Particulate Organic Matter C"    	unit="mg C/m3"/>
+      <field id="osR6n"      long_name="Surface Particulate Organic Matter N"    	unit="mmol N/m3"/>
+      <field id="osR6p"      long_name="Surface Particulate Organic Matter P"    	unit="mmol P/m3"/>
+      <field id="osR6s"      long_name="Surface Particulate Organic Matter S"    	unit="mmol Si/m3"/>
+      <field id="osR6f"      long_name="Surface Particulate Organic Matter F"    	unit="umol Fe/m3"/>
+      <field id="osR3c"      long_name="Surface Semi-refractory Dissolved Organic Carbon C"    	unit="mg C/m3"/>
+      <field id="osR2c"      long_name="Surface Semi-labile Dissolved Organic Carbon C"    	unit="mg C/m3"/>
+      <field id="osN6r"      long_name="Surface Reduction Equivalents"    	unit="mmol S--/m3"/>
+      <field id="osO4n"      long_name="Surface NitrogenSink"    	unit="mmol N/m3"/>
+    </field_group>
+
+
+    <field_group id="pel_diagnos_2D_os" grid_ref="grid_T_2D">
+      <field id="osDepth"      long_name="Surface Gridpoint Depth"    	unit="m"/>
+      <field id="osVolume"      long_name="Surface Gridpoint Volume"    	unit="m3"/>
+      <field id="osArea"      long_name="Surface Gridpoint Area"    	unit="m2"/>
+      <field id="osETW"      long_name="Surface temperature"    	unit="C"/>
+      <field id="osESW"      long_name="Surface Salinity"    	unit="-"/>
+      <field id="osERHO"      long_name="Surface Seawater Density"    	unit="kg/m3"/>
+      <field id="osEIR"      long_name="Surface Irradiance"    	unit="uE/m2/s"/>
+      <field id="osESS"      long_name="Surface Suspended Sediments"    	unit="g/m3"/>
+      <field id="osEPR"      long_name="Surface Water Pressure"    	unit="dbar"/>
+      <field id="osDIC"      long_name="Surface Dissolved Inorganic Carbon"    	unit="umol/kg"/>
+      <field id="osCO2"      long_name="Surface CO2(aq)"    	unit="umol/kg"/>
+      <field id="ospCO2"      long_name="Surface Oceanic pCO2"    	unit="uatm"/>
+      <field id="osHCO3"      long_name="Surface Bicarbonate"    	unit="umol/kg"/>
+      <field id="osCO3"      long_name="Surface Carbonate"    	unit="umol/kg"/>
+      <field id="osALK"      long_name="Surface Alkalinity"    	unit="umol eq/kg"/>
+      <field id="ospH"      long_name="Surface pH"    	unit="-"/>
+      <field id="osOCalc"      long_name="Surface Saturation state of Calcite"    	unit="-"/>
+      <field id="osOArag"      long_name="Surface Saturation state of Aragonite"    	unit="-"/>
+      <field id="osffCO2"      long_name="Surface CO2 fugacity"    	unit="uatm"/>
+      <field id="ostotpelc"      long_name="Surface Total Mass in Pelagic C"    	unit="g C"/>
+      <field id="ostotpeln"      long_name="Surface Total Mass in Pelagic N"    	unit="g N"/>
+      <field id="ostotpelp"      long_name="Surface Total Mass in Pelagic P"    	unit="g P"/>
+      <field id="ostotpels"      long_name="Surface Total Mass in Pelagic S"    	unit="g Si"/>
+      <field id="ostotpelf"      long_name="Surface Total Mass in Pelagic F"    	unit="g Fe"/>
+      <field id="oscxoO2"      long_name="Surface Oxygen Saturation"    	unit="mmol O2/m3"/>
+      <field id="oseO2mO2"      long_name="Surface Relative Oxygen saturation"    	unit="-"/>
+      <field id="osChla"      long_name="Surface Chlorophyll-a"    	unit="mg Chl/m3"/>
+      <field id="osflPTN6r"      long_name="Surface Pelagic Anaerobic Mineralization Rate"    	unit="mmol O2/m3/d"/>
+      <field id="osflN3O4n"      long_name="Surface Pelagic Denitrification Rate"    	unit="mmol N/m3/d"/>
+      <field id="osflN4N3n"      long_name="Surface Pelagic Nitrification Rate"    	unit="mmol N/m3/d"/>
+      <field id="osfscavN7f"      long_name="Surface Pelagic Fe Scavenging Rate"    	unit="umol Fe/m3/d"/>
+      <field id="osIRONDEPO"      long_name="Surface Aerosol deposition of Iron"    	unit="umol Fe/m3/s"/>
+      <field id="ossediR2"      long_name="Surface Colloidal OMT sedimentation rate"    	unit="m/d"/>
+      <field id="ossediR3"      long_name="Surface Refractory OMT sedimentation rate"    	unit="m/d"/>
+      <field id="ossediR6"      long_name="Surface Detritus sedimentation rate"    	unit="m/d"/>
+      <field id="ossediO5"      long_name="Surface Calcite sedimentation rate"    	unit="m/d"/>
+      <field id="osxEPS"      long_name="Surface Total Extinction Coefficient"    	unit="1/m"/>
+      <field id="osABIO_eps"      long_name="Surface Abiotic Extinction Coefficient"    	unit="1/m"/>
+      <field id="osBGE"      long_name="Surface Bac growth efficiency"    	unit="-"/>
+      <field id="osBIOALK"      long_name="Surface O3h biological rate of change"    	unit="mmol/m3"/>
+      <field id="osDMS"      long_name="Surface Dimethyl sulfide"    	unit="pmol/m3"/>
+    </field_group>
+
+
+    <field_group id="pel_diaggrp_2D_os" grid_ref="grid_T_2D">
+      <field id="osqpcPPY_iiP1"      long_name="Surface Quotum P/C in Phytoplankton"    	unit="mmol P/mg C"/>
+      <field id="osqpcPPY_iiP2"      long_name="Surface Quotum P/C in Phytoplankton"    	unit="mmol P/mg C"/>
+      <field id="osqncPPY_iiP1"      long_name="Surface Quotum N/C in Phytoplankton"    	unit="mmol N/mg C"/>
+      <field id="osqncPPY_iiP2"      long_name="Surface Quotum N/C in Phytoplankton"    	unit="mmol N/mg C"/>
+      <field id="osqscPPY_iiP1"      long_name="Surface Quotum Si/C in Phytoplankton"    	unit="mmol Si/mg C"/>
+      <field id="osqscPPY_iiP2"      long_name="Surface Quotum Si/C in Phytoplankton"    	unit="mmol Si/mg C"/>
+      <field id="osqlcPPY_iiP1"      long_name="Surface Quotum Chl/C in Phytoplankton"    	unit="mg Chl /mg C"/>
+      <field id="osqlcPPY_iiP2"      long_name="Surface Quotum Chl/C in Phytoplankton"    	unit="mg Chl /mg C"/>
+      <field id="osqfcPPY_iiP1"      long_name="Surface Quotum Fe/C in Phytoplankton"    	unit="umol Fe/mg C"/>
+      <field id="osqfcPPY_iiP2"      long_name="Surface Quotum Fe/C in Phytoplankton"    	unit="umol Fe/mg C"/>
+      <field id="osqccPPY_iiP1"      long_name="Surface Quotum PIC/POC in Phytoplankton"    	unit="mg C/mg C"/>
+      <field id="osqccPPY_iiP2"      long_name="Surface Quotum PIC/POC in Phytoplankton"    	unit="mg C/mg C"/>
+      <field id="osqpcMEZ_iiZ4"      long_name="Surface Quotum P/C in Mesozooplankton"    	unit="mmol P/mg C"/>
+      <field id="osqncMEZ_iiZ4"      long_name="Surface Quotum N/C in Mesozooplankton"    	unit="mmol N/mg C"/>
+      <field id="osqpcMIZ_iiZ5"      long_name="Surface Quotum P/C in Z5(MicroZooPlankton)"    	unit="mmol P/mg C"/>
+      <field id="osqncMIZ_iiZ5"      long_name="Surface Quotum N/C in Z5(MicroZooPlankton)"    	unit="mmol N/mg C"/>
+      <field id="osqpcOMT_iiR1"      long_name="Surface Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="osqpcOMT_iiR6"      long_name="Surface Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="osqpcOMT_iiR3"      long_name="Surface Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="osqpcOMT_iiR2"      long_name="Surface Quotum P/C in Organic Matter"    	unit="mmol N/mg C"/>
+      <field id="osqncOMT_iiR1"      long_name="Surface Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="osqncOMT_iiR6"      long_name="Surface Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="osqncOMT_iiR3"      long_name="Surface Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="osqncOMT_iiR2"      long_name="Surface Quotum N/C in Organic Matter"    	unit="mmol P/mg C"/>
+      <field id="osqscOMT_iiR1"      long_name="Surface Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="osqscOMT_iiR6"      long_name="Surface Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="osqscOMT_iiR3"      long_name="Surface Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="osqscOMT_iiR2"      long_name="Surface Quotum Si/C in Organic Matter"    	unit="mmol Si/mg C"/>
+      <field id="osqfcOMT_iiR1"      long_name="Surface Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="osqfcOMT_iiR6"      long_name="Surface Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="osqfcOMT_iiR3"      long_name="Surface Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="osqfcOMT_iiR2"      long_name="Surface Quotum Fe/C in Organic Matter"    	unit="umol Fe/mg C"/>
+      <field id="osqpcPBA_iiB1"      long_name="Surface Quotum P/C in Pelagic Bacteria"    	unit="mmol P/mg C"/>
+      <field id="osqncPBA_iiB1"      long_name="Surface Quotum N/C in Pelagic Bacteria"    	unit="mmol N/mg C"/>
+      <field id="ossediPPY_iiP1"      long_name="Surface P1(PhytoPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="ossediPPY_iiP2"      long_name="Surface P2(PhytoPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="ossediMIZ_iiZ5"      long_name="Surface Z5(MicroZooPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="ossediMEZ_iiZ4"      long_name="Surface Z4(MesoZooPlankton) sedimentation rate"    	unit="m/d"/>
+      <field id="ossunPPY_iiP1"      long_name="Surface Specific Net Production of P1(PhytoPlankton)"    	unit="1/d"/>
+      <field id="ossunPPY_iiP2"      long_name="Surface Specific Net Production of P2(PhytoPlankton)"    	unit="1/d"/>
+      <field id="oseiPPY_iiP1"      long_name="Surface Regulating Factor for Light in P1(PhytoPlankton)"    	unit="-"/>
+      <field id="oseiPPY_iiP2"      long_name="Surface Regulating Factor for Light in P2(PhytoPlankton)"    	unit="-"/>
+      <field id="osELiPPY_iiP1"      long_name="Surface Optimal light in P1(PhytoPlankton)"    	unit="W/m2"/>
+      <field id="osELiPPY_iiP2"      long_name="Surface Optimal light in P2(PhytoPlankton)"    	unit="W/m2"/>
+    </field_group>
+
+
+    <field_group id="pel_flux_2D_os" grid_ref="grid_T_2D">
+      <field id="osruPPYc"      long_name="Surface Gross Primary Production"    	unit="mg C/m3/d"/>
+      <field id="osruPPYc1"      long_name="Surface Diatoms GPP"    	unit="mg C/m3/d"/>
+      <field id="osruPPYc2"      long_name="Surface Flagellates GPP"    	unit="mg C/m3/d"/>
+      <field id="osresPPYc"      long_name="Surface Phytoplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="osresPPYc1"      long_name="Surface Diatoms Respiration"    	unit="mg C/m3/d"/>
+      <field id="osresPPYc2"      long_name="Surface Flagellates Respiration"    	unit="mg C/m3/d"/>
+      <field id="osresPBAc"      long_name="Surface Bacterial Respiration"    	unit="mg C/m3/d"/>
+      <field id="osresZOOc"      long_name="Surface Zooplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="osresZOOc4"      long_name="Surface Zooplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="osresZOOc5"      long_name="Surface Zooplankton Respiration"    	unit="mg C/m3/d"/>
+      <field id="osprdO5c"      long_name="Surface Calcite production"    	unit="mgC/m3/d"/>
+      <field id="osexPPYc"      long_name="Surface C excretion from Phytoplankton"    	unit="mg C/m3/d"/>
+      <field id="osexPPYc1"      long_name="Surface Diatoms excretion"    	unit="mg C/m3/d"/>
+      <field id="osexPPYc2"      long_name="Surface Flagellates excretion"    	unit="mg C/m3/d"/>
+      <field id="osruZOOc"      long_name="Surface Gross/Net Secondary Production"    	unit="mg C/m3/d"/>
+      <field id="osruPZOOc"      long_name="Surface Zooplankton Predation on Phytoplankton"    	unit="mg C/m3/d"/>
+      <field id="osruBZOOc"      long_name="Surface Zooplankton Predation on Bacterioplankton"    	unit="mg C/m3/d"/>
+      <field id="osruZZOOc"      long_name="Surface Zooplankton Predation on Zooplankton"    	unit="mg C/m3/d"/>
+      <field id="osruPBAc"      long_name="Surface Bacterioplankton uptake from Detritus"    	unit="mg C/m3/d"/>
+      <field id="osruR1PBAc"      long_name="Surface Bacteria Uptake of DOC"    	unit="mg C/m3/d"/>
+      <field id="osruR6PBAc"      long_name="Surface Bacteria Uptake of POC"    	unit="mg C/m3/d"/>
+      <field id="osexPBAc"      long_name="Surface C excretion from Bacterioplankton"    	unit="mg C/m3/d"/>
+      <field id="osexZOOc"      long_name="Surface C excretion from Zooplankton"    	unit="mg C/m3/d"/>
+      <field id="osexPPYp"      long_name="Surface P excretion from Phytoplankton"    	unit="mmolP/m3/d"/>
+      <field id="osruPPYn"      long_name="Surface Net Nitrogen Uptake"    	unit="mmol N/m3/d"/>
+      <field id="osruPPYp"      long_name="Surface Net Phosphate Uptake"    	unit="mmol P/m3/d"/>
+      <field id="osruPPYf"      long_name="Surface Net Iron Uptake"    	unit="umol Fe/m3/d"/>
+      <field id="osruPPYs"      long_name="Surface Net Silicate Uptake"    	unit="mmol Si/m3/d"/>
+      <field id="osexPPYs"      long_name="Surface biogenic Si loss from phytoplankton"    	unit="mmol Si/m3/d"/>
+      <field id="osremR6s"      long_name="Surface remineralization of detrital Si"    	unit="mmol Si/m3/d"/>
+      <field id="osresPELo"      long_name="Surface Pelagic Oxygen Demand"    	unit="mmol O2/m3/d"/>
+    </field_group>
+
+
+
       <!-- SEAICE variables -->
 
     <field_group id="ice_state_2D" grid_ref="grid_T_2D">
