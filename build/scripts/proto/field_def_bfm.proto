@@ -27,6 +27,11 @@
 %2d-diagnos-pel-xmlstr surface
 %2d-diagnos-pel-xmlstr bottom
 
+%2d-state-pel-xmlstr os
+%2d-diagnos-pel-xmlstr os
+%2d-diaggrp-pel-xmlstr os
+%2d-flux-pel-xmlstr os
+
       <!-- SEAICE variables -->
 
 %2d-state-ice-xmlstr

@@ -2215,8 +2215,16 @@ sub func_XMLFIELD  {
     my $vvl = func_ocean_variable_volume();
 
     # control to generate pelagic surface, bottom, river diagnostics
-    if ($spec) { $grpdim = 3; $type = 'state'; $fldname = "_$spec" ; $spec_short = substr($spec,0,3);}
-    else { $spec = "";}
+    my $spec_skip = 0;
+    if ($spec) { 
+        if ($spec eq 'os') {
+           $grpdim = 3; $fldname = "_$spec" ; $spec_skip = 1;
+        } else {
+           $grpdim = 3; $type = 'state'; $fldname = "_$spec" ; $spec_short = substr($spec,0,3); 
+        }
+    } else { 
+       $spec = "";
+    }
 
     #print "Do ${title}${fldname}\n" ;
 
@@ -2241,8 +2249,12 @@ sub func_XMLFIELD  {
                       my $param_name = $param2->getSigla();
                       my $nameP = $name . "_ii$param_name";
                       my $commP = $comm;$commP =~ s/$group_name/$param_name\($group_name\)/;
+                      if ( $spec eq "os" ) {
+                         $commP = 'Surface ' . $commP;
+                         $nameP = 'os'. $nameP;
+                      }
                       $line .= "${TAB6}<field id=\"${nameP}\"${TAB6}long_name=\"${commP}\"${TAB5}unit=\"${unit}\"/>\n";
-                      if (${dim} eq "3" && $vvl == 1){
+                      if ($dim eq '3' && $vvl == 1 && $spec_skip == 0){
                          $line .= "${TAB6}<field id=\"${nameP}_e3t\"${TAB6}long_name=\"${nameP}_e3t\"${TAB5}unit=\"${unit}\"> ${nameP} * e3t </field>\n";
                       }
                   }
@@ -2259,6 +2271,10 @@ sub func_XMLFIELD  {
                                 $comm  = "sinking of " . $name . $const ;
                                 $nameC = substr($spec,0,4) . $name . $const  ;
                                 $unitC = decreaseUnit( ${$param->getComponents()}{$const} );
+                             } elsif ( $spec eq "os" ) {
+                                $comm = 'Surface ' . $param->getComment() . ' ' . uc($const);
+                                $nameC = $spec . $name . $const;
+                                $unitC = ${$param->getComponents()}{$const};
                              } else {
                                 $comm  = "flux of " . $name . $const . " at " . $spec ;
                                 $nameC = "j". $spec_short . $name . $const  ;
@@ -2266,7 +2282,7 @@ sub func_XMLFIELD  {
                              }
                           }
                           $line .= "${TAB6}<field id=\"${nameC}\"${TAB6}long_name=\"${comm}\"${TAB5}unit=\"${unitC}\"/>\n";
-                          if (${dim} eq "3" && $vvl == 1){
+                          if ($dim eq '3' && $vvl == 1 && $spec_skip == 0){
                              $line .= "${TAB6}<field id=\"${nameC}_e3t\"${TAB6}long_name=\"${nameC}_e3t\"${TAB5}unit=\"${unitC}\"> ${nameC} * e3t </field>\n";
                           }
                       }
@@ -2278,6 +2294,9 @@ sub func_XMLFIELD  {
                         $comm  = "sinking of " . $name ;
                         $name = substr($spec,0,4) . $name ;
                         $unit = decreaseUnit($param->getUnit());
+                     } elsif ( $spec eq "os" ) {
+                        $comm = 'Surface ' . $comm;
+                        $name = $spec . $name;
                      } else {
                         $comm = "flux of " . $name . " at " . $spec ;
                         $name = "j". $spec_short . $name ;
@@ -2285,7 +2304,7 @@ sub func_XMLFIELD  {
                      }
                   }                
                   $line .= "${TAB6}<field id=\"${name}\"${TAB6}long_name=\"${comm}\"${TAB5}unit=\"${unit}\"/>\n";
-                  if (${dim} eq "3" && $vvl == 1){
+                  if ($dim eq '3' && $vvl == 1 && $spec_skip == 0){
                      $line .= "${TAB6}<field id=\"${name}_e3t\"${TAB6}long_name=\"${name}_e3t\"${TAB5}unit=\"${unit}\"> ${name} * e3t </field>\n";
                   }
               }
@@ -2325,7 +2344,7 @@ sub func_XMLFILE {
     # Variables requested as time average
     foreach my $name (@meanvar) {
        my $addinst="";
-       my $dim = (func_variable_dim($name));
+       my $dim = func_variable_dim($name);
        if ( grep( /^$name$/, @instvar ) ) {$addinst=" operation=\"instant\" ";}
        if ($vvl == 0) {
           $line .= "${TAB8}  <field field_ref=\"${name}\"  ${addinst}    />\n";
@@ -2333,7 +2352,7 @@ sub func_XMLFILE {
           if ($dim == 2) {
              $line .= "${TAB8}  <field field_ref=\"${name}\"  ${addinst}    />\n";
           } else {
-             $line .= "${TAB8}  <field field_ref=\"${name}\" name=\"${name}\" operation=\"instant\" freq_op=\"1mo\" > \@${name}_e3t / \@e3t  </field>\n";
+             $line .= "${TAB8}  <field field_ref=\"${name}\" name=\"${name}\" operation=\"average\" freq_op=\"1mo\" > \@${name}_e3t / \@e3t  </field>\n";
           }
        }
     }
@@ -2371,6 +2390,10 @@ sub func_variable_dim {
     }
     if( !defined $dim && $name =~ /^j[a-zA-Z]{3}(.+)$/ ){
         # surface/bottom/river flux fields are 2D
+        $dim = 2 if defined _variable_dim_lookup($1);
+    }
+    if( !defined $dim && $name =~ /^os(.+)$/ ){
+        # ocean surface state fields are 2D
         $dim = 2 if defined _variable_dim_lookup($1);
     }
 
