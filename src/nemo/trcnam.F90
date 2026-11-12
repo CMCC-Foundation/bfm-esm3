@@ -70,7 +70,7 @@ CONTAINS
             WRITE(numout,*)
             WRITE(numout,*) '   ==>>>   Some of the passive tracers are initialised from climatologies '
          ENDIF
-         IF( .NOT.ln_trcdta ) THEN
+         IF( .NOT.ln_trcdta .AND. .NOT.ln_rsttr ) THEN
             WRITE(numout,*)
             WRITE(numout,*) '   ==>>>   All the passive tracers are initialised with constant values '
          ENDIF
